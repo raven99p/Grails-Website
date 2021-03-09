@@ -7,8 +7,13 @@ class LogRegController {
     }
 
     def varif() {
-        render (params)
-        //def res = CredService.getPwdByUser(username)
+
+        //render (params.username)
+        def res = CredService.getPwdByUser(params.username)
+        render res
+        if(res==res) {
+            redirect(controller: 'employee', action:'index')
+        }
         //render(view: "varif", model: [params:params])
     }
 }
