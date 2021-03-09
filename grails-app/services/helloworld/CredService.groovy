@@ -8,9 +8,9 @@ class CredService {
 
     def dataSource
 
-    def getPwdByUser() {
+    def getPwdByUser(String username) {
         def sql = new Sql(dataSource)
-        def resultRows = sql.rows('select * from users')
+        def resultRows = sql.rows('select password from users where username=:username',[username:username])
         sql.close()
         return resultRows
     }

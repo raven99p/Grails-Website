@@ -4,6 +4,7 @@ class LogRegController {
     def CredService
     def index() {
         def res = CredService.getPwdByUser()
-        render(view: "login", model: [res:res])
+        render res? true : false
+        //render(view: "login", model: [res:res])
     }
 }
