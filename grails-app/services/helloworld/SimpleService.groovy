@@ -10,7 +10,7 @@ import javax.sql.DataSource
 class SimpleService {
     def dataSource
 
-    def getUsers() {
+    def getDept() {
         def sql = new Sql(dataSource)
         def resultRows = sql.rows('select * from dept')
         sql.close()

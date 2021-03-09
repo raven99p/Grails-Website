@@ -5,7 +5,7 @@ class EmployeeController {
     def simpleService
 
     def index() {
-        def res = simpleService.getUsers()
+        def res = simpleService.getDept()
         render(view: "list", model: [res:res])
     }
     def getEmpByDept(int table ) {
