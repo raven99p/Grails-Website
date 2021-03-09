@@ -12,6 +12,6 @@ class UrlMappings {
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')
-        "/LogReg/$id?"(controller: 'LogReg', action: 'index')
+        //"/varif/$id?"(controller: 'logReg', action: 'varif')
     }
 }

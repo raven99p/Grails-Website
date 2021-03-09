@@ -3,8 +3,12 @@ package helloworld
 class LogRegController {
     def CredService
     def index() {
-        def res = CredService.getPwdByUser()
-        render res? true : false
-        //render(view: "login", model: [res:res])
+        render(view:"login")
+    }
+
+    def varif() {
+        render (params)
+        //def res = CredService.getPwdByUser(username)
+        //render(view: "varif", model: [params:params])
     }
 }

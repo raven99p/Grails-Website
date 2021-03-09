@@ -17,7 +17,7 @@
 
 
 <head>
-    <title>AAAAAAAAAAAAAAAAAAA</title>
+    <title>Departments</title>
 </head>
 
 <body>
