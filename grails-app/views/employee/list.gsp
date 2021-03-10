@@ -44,6 +44,12 @@
             <g:actionSubmit type="button" class="btn btn-primary" value="See employees" action="getEmpByDept" />
         </div>
     </g:form>
+    <g:link controller="logReg" action="logout">
+        <button type="button" class="btn btn-primary">Logout</button>
+    </g:link>
+    <g:link controller="employee" action="hireForm">
+        <button type="button" class="btn btn-primary">Hire</button>
+    </g:link>
 </div>
 </body>
 </html>

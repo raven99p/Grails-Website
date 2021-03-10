@@ -15,5 +15,9 @@ class LogRegController {
         }
         //render(view: "varif", model: [params:params])
     }
+    def logout() {
+        CredService.logout()
+        redirect(controller: 'logReg', action:'index')
+    }
 
 }

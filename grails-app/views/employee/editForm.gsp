@@ -48,7 +48,9 @@ ${res}
 
 
             <g:actionSubmit type="button" class="btn btn-primary" value="Save" action="saveForm" />
-
+            <g:link controller="logReg" action="logout">
+                <button type="button" class="btn btn-primary">Logout</button>
+            </g:link>
         </g:form>
     </div>
 </body>

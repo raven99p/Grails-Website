@@ -21,4 +21,13 @@ class EmployeeController {
         def res = simpleService.getEmpByDept(params.dept_id)
         render(view: "empByDept", model: [res:res])
     }
+    def hireForm() {
+        render(view:"hire")
+    }
+    def hire() {
+        simpleService.hireEmp(params)
+        def res = simpleService.getEmpByDept(params.dept_id)
+        render(view: "empByDept", model: [res:res])
+    }
+
 }

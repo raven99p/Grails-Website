@@ -52,6 +52,9 @@
             </g:each>
         </tbody>
     </table>
+    <g:link controller="logReg" action="logout">
+        <button type="button" class="btn btn-primary">Logout</button>
+    </g:link>
 
 
 
