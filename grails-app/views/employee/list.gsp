@@ -17,28 +17,33 @@
 
 
 <head>
+
     <title>Departments</title>
+
 </head>
 
 <body>
+
+
 <div class="container">
     <h2>Department Names</h2>
 
     <g:form name="myForm" url="[controller:'employee',action:'getEmpByDept']">
-        <g:select style="width:400px;height:300px;font-size: 20px"
-                  name="table"
-                  from="${res}"
-                  value="${res.d_name}"
-                  optionKey="id"
-                  optionValue="d_name"
-                  noSelection="${['1':'Select One...']}"
-        />
-        <g:link uri="/">Home</g:link>
-        <g:actionSubmit type="button" class="btn btn-primary" value="See employees" action="getEmpByDept" />
+        <div class="form-group">
+            <g:select class="form-select" size="3" aria-label="size 3 select example" style="width:400px;height:300px;font-size: 20px"
+                      name="table"
+                      from="${res}"
+                      value="${res.d_name}"
+                      optionKey="id"
+                      optionValue="d_name"
+                      noSelection="${['1':'Select One...']}"
+            />
+        </div>
+        <div class="form-group">
+            <g:link uri="/">Home</g:link>
+            <g:actionSubmit type="button" class="btn btn-primary" value="See employees" action="getEmpByDept" />
+        </div>
     </g:form>
 </div>
-
-
-
 </body>
 </html>

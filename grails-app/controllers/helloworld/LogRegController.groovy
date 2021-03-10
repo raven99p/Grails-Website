@@ -15,4 +15,5 @@ class LogRegController {
         }
         //render(view: "varif", model: [params:params])
     }
+
 }

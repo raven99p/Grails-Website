@@ -18,7 +18,7 @@ class SimpleService {
     }
     def getEmpByDept(int id) {
         def sql = new Sql(dataSource)
-        def resultRows = sql.rows('select first_name from employee where dept_id=:id',[id:id])
+        def resultRows = sql.rows('select * from employee where dept_id=:id',[id:id])
         sql.close()
         return resultRows
     }

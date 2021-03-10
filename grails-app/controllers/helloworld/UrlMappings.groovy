@@ -9,9 +9,10 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/"(controller:'logReg', action:'index')
         "500"(view:'/error')
         "404"(view:'/notFound')
         //"/varif/$id?"(controller: 'logReg', action: 'varif')
+
     }
 }

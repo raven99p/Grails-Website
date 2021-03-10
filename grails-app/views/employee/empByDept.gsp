@@ -14,20 +14,52 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <head>
-    <title>AAAAAAAAAAAAAAAAAAA</title>
+    <title>Employees</title>
 </head>
 
 <body>
 <div class="container">
-    <h2>Employee Names</h2>
-    <g:select style="width:400px;height:300px;font-size: 20px" name="employee_names" from="${first_name}"
-              value="${first_name}" />
-    <g:link uri="/">Home</g:link>
+
+    <h2>Employees</h2>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">ΑΦΜ</th>
+                <th scope="col">Date of birth</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <g:each var="employee" in="${res}" >
+                <tr>
+                    <th scope="row">${employee.id}</th>
+                    <th scope="row">${employee.first_name}</th>
+                    <td>${employee.last_name}</td>
+                    <td>${employee.afm}</td>
+                    <td>${employee.dob}</td>
+                    <td>
+                        <g:link controller="employee" action="index">
+                            <button type="button" class="btn btn-primary">Edit</button>
+                        </g:link>
+                        <g:link controller="employee" action="index">
+                            <button type="button" class="btn btn-primary">Delete</button>
+                        </g:link>
+                    </td>
+                </tr>
+            </g:each>
+        </tbody>
+    </table>
 
 
-    <g:link controller="employee" action="index">
-        <button type="button" class="btn btn-primary">Go to Departments</button>
-    </g:link>
+
+
+
+
+
+
 </div>
 
 </body>

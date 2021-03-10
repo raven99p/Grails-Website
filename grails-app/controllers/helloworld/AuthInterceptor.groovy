@@ -3,13 +3,17 @@ package helloworld
 
 class AuthInterceptor {
 
+    CredService credService
+    AuthInterceptor() {
+        match controller: 'employee'
+    }
 
 
-    boolean before() { true }
-
-    boolean after() { true }
-
-    void afterView() {
-        // no-op
+    boolean before() {
+        if (credService.isAuth()){
+            return true
+        }
+        redirect(controller: "logReg", action: "index")
+        return false
     }
 }
