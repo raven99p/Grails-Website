@@ -16,7 +16,7 @@
 <head>
     <title>Employees</title>
 </head>
-
+${res}
 <body>
 <div class="container">
 
@@ -44,7 +44,7 @@
                         <g:link controller="employee" action="editEmpId" params="[id:employee.id]">
                             <button type="button" class="btn btn-primary">Edit</button>
                         </g:link>
-                        <g:link controller="employee" action="index">
+                        <g:link controller="employee" action="fire" params="[id:employee.id, dept_id:dept_id]">
                             <button type="button" class="btn btn-primary">Delete</button>
                         </g:link>
                     </td>
@@ -52,6 +52,9 @@
             </g:each>
         </tbody>
     </table>
+    <g:link controller="employee" action="index">
+        <button type="button" class="btn btn-primary">Back to Departments</button>
+    </g:link>
     <g:link controller="logReg" action="logout">
         <button type="button" class="btn btn-primary">Logout</button>
     </g:link>

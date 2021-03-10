@@ -36,7 +36,8 @@ class SimpleService {
         def afm = params.afm.toInteger()
         def id = params.id.toInteger()
         def dob = Date.valueOf(params.dob)
-        def res = sql.executeUpdate('update employee set first_name=:fName, last_name=:lName, afm=:afm, dob=:dob  where id=:id',[fName:params.first_name, lName:params.last_name, afm:afm, id:id, dob:dob])
+        def d_id = params.dept_id.toInteger()
+        def res = sql.executeUpdate('update employee set first_name=:fName, last_name=:lName, afm=:afm, dob=:dob, dept_id=:d_id  where id=:id',[fName:params.first_name, lName:params.last_name, afm:afm, id:id, dob:dob, d_id:d_id])
         sql.close()
         return res
     }
@@ -50,8 +51,16 @@ class SimpleService {
 
         sql.close()
         return resultRows
-
     }
+
+    def fireEmp(params) {
+        def sql = new Sql(dataSource)
+        def id_integer = params.id.toInteger()
+        sql.execute('delete from employee where id=:id',[id:id_integer])
+        sql.close()
+        return 'fire Employee'
+    }
+
 
 
 

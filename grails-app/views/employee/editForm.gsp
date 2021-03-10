@@ -41,10 +41,14 @@ ${res}
                 <label class="form-label">Date of birth</label>
                 <input name="dob" class="form-control" required="true" value=${res.dob[0]}><br/>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Department id</label>
-                <input name="dept_id" class="form-control" required="true" value=${res.dept_id[0]}><br/>
-            </div>
+            <g:select class="form-select" size="3" aria-label="size 3 select example" style="width:400px;height:300px;font-size: 20px"
+                      name="dept_id"
+                      from="${dep}"
+                      value="${res.dept_id[0]}"
+                      optionKey="id"
+                      optionValue="d_name"
+                      noSelection="${['1':'Select One...']}"
+            />
 
 
             <g:actionSubmit type="button" class="btn btn-primary" value="Save" action="saveForm" />
