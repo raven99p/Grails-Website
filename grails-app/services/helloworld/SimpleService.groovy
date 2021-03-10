@@ -2,8 +2,7 @@ package helloworld
 
 import grails.gorm.transactions.Transactional
 import groovy.sql.Sql
-import static java.util.Calendar.*
-import javax.sql.DataSource
+import java.sql.Date
 
 
 @Transactional
@@ -33,7 +32,8 @@ class SimpleService {
         def sql = new Sql(dataSource)
         def afm = params.afm.toInteger()
         def id = params.id.toInteger()
-        def res = sql.executeUpdate('update employee set first_name=:fName, last_name=:lName, afm=:afm  where id=:id',[fName:params.first_name, lName:params.last_name, afm:afm, id:id])
+        def dob = Date.valueOf(params.dob)
+        def res = sql.executeUpdate('update employee set first_name=:fName, last_name=:lName, afm=:afm, dob=:dob  where id=:id',[fName:params.first_name, lName:params.last_name, afm:afm, id:id, dob:dob])
         sql.close()
         return res
     }
