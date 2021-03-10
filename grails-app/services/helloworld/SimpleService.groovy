@@ -2,7 +2,7 @@ package helloworld
 
 import grails.gorm.transactions.Transactional
 import groovy.sql.Sql
-
+import static java.util.Calendar.*
 import javax.sql.DataSource
 
 
@@ -16,9 +16,10 @@ class SimpleService {
         sql.close()
         return resultRows
     }
-    def getEmpByDept(int id) {
+    def getEmpByDept(id) {
         def sql = new Sql(dataSource)
-        def resultRows = sql.rows('select * from employee where dept_id=:id',[id:id])
+        def D_id = id.toInteger()
+        def resultRows = sql.rows('select * from employee where dept_id=:D_id',[D_id:D_id])
         sql.close()
         return resultRows
     }
@@ -30,9 +31,11 @@ class SimpleService {
     }
     def updateEmp(params) {
         def sql = new Sql(dataSource)
-        sql.executeUpdate "update employee set first_name=$params.first_name, last_name=$params.last_name, afm=$params.afm, dob=$params.dob  where id=$params.id"
+        def afm = params.afm.toInteger()
+        def id = params.id.toInteger()
+        def res = sql.executeUpdate('update employee set first_name=:fName, last_name=:lName, afm=:afm  where id=:id',[fName:params.first_name, lName:params.last_name, afm:afm, id:id])
         sql.close()
-        return "Updated employee"
+        return res
     }
 
 

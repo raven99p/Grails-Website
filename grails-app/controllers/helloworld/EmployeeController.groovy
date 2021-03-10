@@ -18,8 +18,7 @@ class EmployeeController {
     }
     def saveForm() {
         simpleService.updateEmp(params)
-        def id=params.id
-        def res = simpleService.getEmpByDept(id)
+        def res = simpleService.getEmpByDept(params.dept_id)
         render(view: "empByDept", model: [res:res])
     }
 }

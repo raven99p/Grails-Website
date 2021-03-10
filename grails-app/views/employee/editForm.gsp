@@ -16,11 +16,15 @@
 <head>
     <title>Edit Form</title>
 </head>
-
+${res}
 <body>
     <div class="container">
         <h2>This is the editing form of employee</h2>
         <g:form name="loginForm" controller="employee" action="saveForm">
+            <div class="mb-3">
+                <label class="form-label">id</label>
+                <input name="id" class="form-control" required="true" value=${res.id[0]} readonly><br/>
+            </div>
             <div class="mb-3">
                 <label class="form-label">First Name</label>
                 <input name="first_name" class="form-control" required="true" value=${res.first_name[0]}><br/>
@@ -37,8 +41,13 @@
                 <label class="form-label">Date of birth</label>
                 <input name="dob" class="form-control" required="true" value=${res.dob[0]}><br/>
             </div>
+            <div class="mb-3">
+                <label class="form-label">Department id</label>
+                <input name="dept_id" class="form-control" required="true" value=${res.dept_id[0]}><br/>
+            </div>
 
-            <g:actionSubmit type="button" class="btn btn-primary" value="Save" action="saveForm"/>
+
+            <g:actionSubmit type="button" class="btn btn-primary" value="Save" action="saveForm" />
 
         </g:form>
     </div>
