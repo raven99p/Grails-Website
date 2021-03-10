@@ -41,7 +41,7 @@
                     <td>${employee.afm}</td>
                     <td>${employee.dob}</td>
                     <td>
-                        <g:link controller="employee" action="index">
+                        <g:link controller="employee" action="editEmpId" params="[id:employee.id]">
                             <button type="button" class="btn btn-primary">Edit</button>
                         </g:link>
                         <g:link controller="employee" action="index">
