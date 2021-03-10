@@ -4,4 +4,5 @@ DONE:
   Departments table: Hire, View, Logout
   
   Employees table: Edit, Delete, Back to departments
-                          
+
+TODO: Make it an attractive UI with Bootstrap
