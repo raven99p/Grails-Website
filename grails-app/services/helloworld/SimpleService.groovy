@@ -100,7 +100,26 @@ class SimpleService {
                                         ''',[d_name:params.d_name,d_id:d_id])
         sql.close()
         return res
+    }
 
+    def deleteDept(params) {
+        def sql = new Sql(dataSource)
+        def id_integer = params.d_id.toInteger()
+        try {
+            sql.execute('''
+                        delete from dept where id=:id
+                        ''',[id:id_integer])
+            sql.close()
+            return true
+        }
+        catch(e) {
+            sql.close()
+            return false
+
+        }
+
+
+        r
     }
 
 

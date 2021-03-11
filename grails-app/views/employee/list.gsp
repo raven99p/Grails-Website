@@ -49,6 +49,9 @@
                         <g:link controller="employee" action="updateDeptForm" params="[d_id:department.id, d_name:department.d_name]">
                             <button type="button" class="btn btn-primary">Edit</button>
                         </g:link>
+                        <g:link controller="employee" action="deleteDept" params="[d_id:department.id]">
+                            <button type="button" class="btn btn-primary">Delete</button>
+                        </g:link>
                     </td>
                 </tr>
             </g:each>
@@ -62,7 +65,7 @@
         <button type="button" class="btn btn-primary">Logout</button>
     </g:link>
     <g:link controller="employee" action="createEmployeeForm">
-        <button type="button" class="btn btn-primary">Hire</button>
+        <button type="button" class="btn btn-primary">Create new employee</button>
     </g:link>
     <g:link controller="employee" action="createDeptForm">
         <button type="button" class="btn btn-primary">Create new department</button>

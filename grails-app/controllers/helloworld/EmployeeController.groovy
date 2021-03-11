@@ -55,13 +55,18 @@ class EmployeeController {
 
     def updateDeptForm() {
         render params
-        render(view: "updateDept", model: [dept_id:params.d_id,d_name:params.d_name]) 
+        render(view: "updateDept", model: [dept_id:params.d_id,d_name:params.d_name])
 
     }
     def updateDept() {
         simpleService.updateDept(params)
         redirect(controller:'employee')
 
+    }
+
+    def deleteDept(){
+        simpleService.deleteDept(params)
+        redirect(controller:'employee')
     }
 
 
