@@ -1,0 +1,4 @@
+CREATE TABLE dept(
+	id bigserial PRIMARY KEY NOT NULL,
+	d_name VARCHAR(10) NOT NULL
+);
