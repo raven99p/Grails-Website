@@ -19,15 +19,24 @@
 <head>
 
     <title>Departments</title>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-text">
+                <h4>Logged in as: ${session["user"][0]}</h4>
+                <g:link controller="logReg" action="logout">
+                    <button type="button" class="btn btn-primary">Logout</button>
+                </g:link>
 
+            </span>
+        </div>
+    </nav>
 </head>
 
 <body>
 
 
-<div class="container">
-    <h2>Logged in as ${session["user"][0]}</h2>
-    <h2>Department Names</h2>
+<div class="container" style = "width: 600px;">
+    <h2>Departments</h2>
 
     <table class="table">
             <thead class="thead-dark">
@@ -61,10 +70,8 @@
 
 
 
-    <g:link controller="logReg" action="logout">
-        <button type="button" class="btn btn-primary">Logout</button>
-    </g:link>
-    <g:link controller="employee" action="createEmployeeForm">
+
+    <g:link controller="employee" action="createEmployeeForm" id="create_Employee">
         <button type="button" class="btn btn-primary">Create new employee</button>
     </g:link>
     <g:link controller="employee" action="createDeptForm">

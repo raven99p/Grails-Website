@@ -16,13 +16,23 @@
 
 <html>
 <head>
-    <title>Create Form</title>
+    <title>Edit Form</title>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-text">
+                <h4>Logged in as: ${session["user"][0]}</h4>
+                <g:link controller="logReg" action="logout">
+                    <button type="button" class="btn btn-primary">Logout</button>
+                </g:link>
+
+            </span>
+        </div>
+    </nav>
 </head>
-${d_name}
-${dept_id}
+
 <body>
-<div class="container">
-    <h2>Create a new department</h2>
+<div class="container" style = "width: 500px;">
+    <h2>Edit current department</h2>
     <g:form name="CreateDeptForm" controller="employee" action="updateDept">
         <div class="mb-3">
             <label class="form-label">id</label>

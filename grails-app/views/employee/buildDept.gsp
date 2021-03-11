@@ -16,10 +16,21 @@
 <html>
 <head>
     <title>Create Form</title>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-text">
+                <h4>Logged in as: ${session["user"][0]}</h4>
+                <g:link controller="logReg" action="logout">
+                    <button type="button" class="btn btn-primary">Logout</button>
+                </g:link>
+
+            </span>
+        </div>
+    </nav>
 </head>
 
 <body>
-<div class="container">
+<div class="container" style = "width: 500px;">
     <h2>Create a new department</h2>
     <g:form name="CreateDeptForm" controller="employee" action="createDept">
         <div class="mb-3">

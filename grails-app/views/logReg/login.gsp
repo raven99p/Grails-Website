@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style = "width: 500px;">
         <h2>Login here</h2>
         <g:form name="loginForm" controller="logReg" action="varif">
             <div class="mb-3">
@@ -34,7 +34,7 @@
                 <input name="password" type="password" class="form-control" id="exampleInputPassword1" required="true"><br/>
             </div>
 
-            <g:actionSubmit type="button" class="btn btn-primary" value="Save" action="varif"/>
+            <g:actionSubmit type="button" class="btn btn-primary" value="Login" action="varif"/>
 
         </g:form>
     </div>

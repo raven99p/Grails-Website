@@ -118,8 +118,16 @@ class SimpleService {
 
         }
 
+    }
+    def getDeptById(id) {
+        def sql = new Sql(dataSource)
+        def d_id = id.toInteger()
+        def resultRows = sql.rows('''
+                                    select d_name from dept where id=:id
+                                    ''',[id:d_id])
+        sql.close()
+        return resultRows.d_name
 
-        r
     }
 
 

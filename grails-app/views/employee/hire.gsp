@@ -14,11 +14,23 @@
 
 <html>
 <head>
-    <title>Edit Form</title>
+    <title>Hire Form</title>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-text">
+                <h4>Logged in as: ${session["user"][0]}</h4>
+                <g:link controller="logReg" action="logout">
+                    <button type="button" class="btn btn-primary">Logout</button>
+                </g:link>
+
+            </span>
+        </div>
+    </nav>
 </head>
-${res}
+
 <body>
-<div class="container">
+<div class="container" style = "width: 500px;">
+
     <h2>Hire an employee</h2>
     <g:form name="loginForm" controller="employee" action="createEmployee">
         <div class="mb-3">
@@ -37,20 +49,19 @@ ${res}
             <label class="form-label">Date of birth</label>
             <input name="dob" class="form-control" required="true" placeholder="YYYY-MM-DD" ><br/>
         </div>
-        <g:select class="form-select" size="3" aria-label="size 3 select example" style="width:400px;height:300px;font-size: 20px"
-                  name="dept_id"
-                  from="${res}"
-                  value="${res.id}"
-                  optionKey="id"
-                  optionValue="d_name"
-                  noSelection="${['1':'Select One...']}"
-        />
+
+        <div class="mb-3">
+            <select name="dept_id" class="form-select" aria-label="Default select example">
+                <g:each var="department" in="${allDeps}" >
+                    <option name = "dept_id" value="${department.id}"  selected>${department.d_name}</option>
+                </g:each>
+            </select>
+        </div>
 
 
         <g:actionSubmit type="button" class="btn btn-primary" value="Hire" action="createEmployee" />
-        <g:link controller="logReg" action="logout">
-            <button type="button" class="btn btn-primary">Logout</button>
-        </g:link>
+
+
     </g:form>
 </div>
 </body>

@@ -15,12 +15,23 @@
 
 <head>
     <title>Employees</title>
-</head>
-${res}
-<body>
-<div class="container">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-text">
+                <h4>Logged in as: ${session["user"][0]}</h4>
+                <g:link controller="logReg" action="logout">
+                    <button type="button" class="btn btn-primary">Logout</button>
+                </g:link>
 
-    <h2>Employees</h2>
+            </span>
+        </div>
+    </nav>
+</head>
+
+<body>
+<div class="container" style = "width: 900px;">
+
+    <h2>Employees of Department : ${d_name}</h2>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -55,15 +66,6 @@ ${res}
     <g:link controller="employee" action="index">
         <button type="button" class="btn btn-primary">Back to Departments</button>
     </g:link>
-    <g:link controller="logReg" action="logout">
-        <button type="button" class="btn btn-primary">Logout</button>
-    </g:link>
-
-
-
-
-
-
 
 
 </div>
