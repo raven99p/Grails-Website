@@ -1,1 +1,1 @@
-![alt text](https://github.com/raven99p/Grails-Website/blob/main/images/employees.jpg?raw=true)
+![alt text](https://github.com/raven99p/Grails-Website/blob/main/employees.jpg?raw=true)
