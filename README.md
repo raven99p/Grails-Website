@@ -1,1 +1,2 @@
-![alt text](https://github.com/raven99p/Grails-Website/blob/main/employees.jpg?raw=true)
+![GitHub Logo](/images/employees.png)
+Format: ![Alt Text](url)
