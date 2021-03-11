@@ -1,27 +1,27 @@
-# This is the Login screen
+# Login screen
 
 
 ![GitHub Logo](/images/Login.jpg)
 
 
-# this is the main screen in which you can see all departments and their actions
+# Main department table
 
 
 ![GitHub Logo](/images/Departments.jpg)
 
-# This is the Editing form of the departments
+# Editing form of departments
 
 
 ![GitHub Logo](/images/EditDepartments.jpg)
 
 
-# This is the employee screen in which you can see all employees of the selected Department
+# Employees table
 
 
 ![GitHub Logo](/images/Employees.jpg)
 
 
-# This is the Editing form of the employees
+# Editing form of employees
 
 
 ![GitHub Logo](/images/EditEmployees.jpg)
