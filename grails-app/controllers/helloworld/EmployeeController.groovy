@@ -18,6 +18,9 @@ class EmployeeController {
         def department = simpleService.getDept()
         render(view:"editForm", model: [res:res, dep:department])
     }
+
+
+
     def updateEmployeeForm() {
         simpleService.updateEmp(params)
         def res = simpleService.getEmpByDept(params.dept_id)
@@ -34,12 +37,32 @@ class EmployeeController {
         def res = simpleService.getEmpByDept(params.dept_id)
         render(view: "empByDept", model: [res:res, dept_id:params.dept_id])
     }
-
     def deleteEmployee() {
         render params
         simpleService.deleteEmp(params)
         def res = simpleService.getEmpByDept(params.dept_id)
         render(view: "empByDept", model: [res:res, dept_id:params.dept_id])
     }
+    def createDeptForm() {
+        render(view:"buildDept")
+    }
+
+    def createDept() {
+        render params
+        simpleService.createDept(params)
+        redirect(controller:'employee')
+    }
+
+    def updateDeptForm() {
+        render params
+        render(view: "updateDept", model: [dept_id:params.d_id,d_name:params.d_name]) 
+
+    }
+    def updateDept() {
+        simpleService.updateDept(params)
+        redirect(controller:'employee')
+
+    }
+
 
 }

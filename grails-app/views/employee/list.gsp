@@ -29,28 +29,45 @@
     <h2>Logged in as ${session["user"][0]}</h2>
     <h2>Department Names</h2>
 
-    <g:form name="myForm" url="[controller:'employee',action:'getEmpByDept']">
-        <div class="form-group">
-            <g:select class="form-select" size="3" aria-label="size 3 select example" style="width:400px;height:300px;font-size: 20px"
-                      name="table"
-                      from="${res}"
-                      value="${res.d_name}"
-                      optionKey="id"
-                      optionValue="d_name"
-                      noSelection="${['1':'Select One...']}"
-            />
-        </div>
-        <div class="form-group">
-            <g:link uri="/">Home</g:link>
-            <g:actionSubmit type="button" class="btn btn-primary" value="See employees" action="getEmpByDept" />
-        </div>
-    </g:form>
+    <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <g:each var="department" in="${res}" >
+                <tr>
+                    <th scope="row">${department.id}</th>
+                    <th scope="row">${department.d_name}</th>
+                    <td>
+                        <g:link controller="employee" action="getEmpByDept" params="[table:department.id]">
+                            <button type="button" class="btn btn-primary">View</button>
+                        </g:link>
+                        <g:link controller="employee" action="updateDeptForm" params="[d_id:department.id, d_name:department.d_name]">
+                            <button type="button" class="btn btn-primary">Edit</button>
+                        </g:link>
+                    </td>
+                </tr>
+            </g:each>
+            </tbody>
+        </table>
+
+
+
+
     <g:link controller="logReg" action="logout">
         <button type="button" class="btn btn-primary">Logout</button>
     </g:link>
     <g:link controller="employee" action="createEmployeeForm">
         <button type="button" class="btn btn-primary">Hire</button>
     </g:link>
+    <g:link controller="employee" action="createDeptForm">
+        <button type="button" class="btn btn-primary">Create new department</button>
+    </g:link>
+
 </div>
 </body>
 </html>
