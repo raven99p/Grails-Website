@@ -10,10 +10,10 @@ class AuthInterceptor {
 
 
     boolean before() {
-        if (credService.isAuth()){
+        if (session.getAttribute("user")!=null){
             return true
         }
-        redirect(controller: "logReg", action: "index")
+        redirect(controller: "logReg")
         return false
     }
 }

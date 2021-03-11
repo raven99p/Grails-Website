@@ -8,16 +8,24 @@ class LogRegController {
 
     def varif() {
 
-        //render (params)
-        def res = CredService.getPwdByUser(params)
-        if(res) {
-            redirect(controller: 'employee', action:'index')
+        if(request.method == 'POST') {
+            def res = CredService.getPwdByUser(params)
+            if(res) {
+                def nickname = params.username.split('@')
+                session["user"] = [nickname[0]]
+                redirect(controller: 'employee', action:'index')
+            }
+            else {
+                flash.message = "User not found"
+                redirect(controller:'logReg')
+            }
         }
-        //render(view: "varif", model: [params:params])
     }
+
+
     def logout() {
-        CredService.logout()
-        redirect(controller: 'logReg', action:'index')
+        session.invalidate()
+        redirect(controller: 'logReg')
     }
 
 }

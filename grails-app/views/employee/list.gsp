@@ -26,6 +26,7 @@
 
 
 <div class="container">
+    <h2>Logged in as ${session["user"][0]}</h2>
     <h2>Department Names</h2>
 
     <g:form name="myForm" url="[controller:'employee',action:'getEmpByDept']">

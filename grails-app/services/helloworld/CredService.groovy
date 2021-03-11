@@ -8,6 +8,8 @@ class CredService {
 
     def dataSource
     boolean isAuthenticated
+
+
     def getPwdByUser(params) {
         def sql = new Sql(dataSource)
         def resultRows = sql.rows('''
@@ -32,9 +34,7 @@ class CredService {
             return false
         }
     }
-    def logout() {
-        isAuthenticated=false
-    }
+
 
 
 }
