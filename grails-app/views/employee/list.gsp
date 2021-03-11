@@ -47,7 +47,7 @@
     <g:link controller="logReg" action="logout">
         <button type="button" class="btn btn-primary">Logout</button>
     </g:link>
-    <g:link controller="employee" action="hireForm">
+    <g:link controller="employee" action="createEmployeeForm">
         <button type="button" class="btn btn-primary">Hire</button>
     </g:link>
 </div>

@@ -18,26 +18,26 @@ class EmployeeController {
         def department = simpleService.getDept()
         render(view:"editForm", model: [res:res, dep:department])
     }
-    def saveForm() {
+    def updateEmployeeForm() {
         simpleService.updateEmp(params)
         def res = simpleService.getEmpByDept(params.dept_id)
         //render res
         render(view: "empByDept", model: [res:res])
     }
-    def hireForm() {
+    def createEmployeeForm() {
         def res = simpleService.getDept()
         render(view:"hire", model:[res:res])
     }
-    def hire() {
+    def createEmployee() {
         //render params
-        simpleService.hireEmp(params)
+        simpleService.createEmp(params)
         def res = simpleService.getEmpByDept(params.dept_id)
         render(view: "empByDept", model: [res:res, dept_id:params.dept_id])
     }
 
-    def fire() {
+    def deleteEmployee() {
         render params
-        simpleService.fireEmp(params)
+        simpleService.deleteEmp(params)
         def res = simpleService.getEmpByDept(params.dept_id)
         render(view: "empByDept", model: [res:res, dept_id:params.dept_id])
     }

@@ -44,7 +44,7 @@ ${res}
                         <g:link controller="employee" action="editEmpId" params="[id:employee.id]">
                             <button type="button" class="btn btn-primary">Edit</button>
                         </g:link>
-                        <g:link controller="employee" action="fire" params="[id:employee.id, dept_id:dept_id]">
+                        <g:link controller="employee" action="deleteEmployee" params="[id:employee.id, dept_id:dept_id]">
                             <button type="button" class="btn btn-primary">Delete</button>
                         </g:link>
                     </td>

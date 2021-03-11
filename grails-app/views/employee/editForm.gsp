@@ -20,7 +20,7 @@ ${res}
 <body>
     <div class="container">
         <h2>This is the editing form of employee</h2>
-        <g:form name="loginForm" controller="employee" action="saveForm">
+        <g:form name="loginForm" controller="employee" action="updateEmployeeForm">
             <div class="mb-3">
                 <label class="form-label">id</label>
                 <input name="id" class="form-control" required="true" value=${res.id[0]} readonly><br/>
@@ -51,7 +51,7 @@ ${res}
             />
 
 
-            <g:actionSubmit type="button" class="btn btn-primary" value="Save" action="saveForm" />
+            <g:actionSubmit type="button" class="btn btn-primary" value="Save" action="updateEmployeeForm" />
             <g:link controller="logReg" action="logout">
                 <button type="button" class="btn btn-primary">Logout</button>
             </g:link>

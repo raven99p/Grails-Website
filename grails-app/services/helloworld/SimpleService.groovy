@@ -56,7 +56,7 @@ class SimpleService {
         return res
     }
 
-    def hireEmp(params) {
+    def createEmp(params) {
         def sql = new Sql(dataSource)
         def afm = params.afm.toInteger()
         def dob = Date.valueOf(params.dob)
@@ -71,7 +71,7 @@ class SimpleService {
         return resultRows
     }
 
-    def fireEmp(params) {
+    def deleteEmp(params) {
         def sql = new Sql(dataSource)
         def id_integer = params.id.toInteger()
         sql.execute('''

@@ -20,7 +20,7 @@ ${res}
 <body>
 <div class="container">
     <h2>Hire an employee</h2>
-    <g:form name="loginForm" controller="employee" action="hire">
+    <g:form name="loginForm" controller="employee" action="createEmployee">
         <div class="mb-3">
             <label class="form-label">First Name</label>
             <input name="first_name" class="form-control" required="true" ><br/>
@@ -47,7 +47,7 @@ ${res}
         />
 
 
-        <g:actionSubmit type="button" class="btn btn-primary" value="Hire" action="hire" />
+        <g:actionSubmit type="button" class="btn btn-primary" value="Hire" action="createEmployee" />
         <g:link controller="logReg" action="logout">
             <button type="button" class="btn btn-primary">Logout</button>
         </g:link>
