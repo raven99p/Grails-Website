@@ -12,7 +12,7 @@
 # Editing form of departments
 
 
-![GitHub Logo](/images/EditDepartments.jpg)
+![GitHub Logo](/images/EditDepartment.jpg)
 
 
 # Employees table
@@ -24,7 +24,7 @@
 # Editing form of employees
 
 
-![GitHub Logo](/images/EditEmployees.jpg)
+![GitHub Logo](/images/EditEmployee.jpg)
 
 
 
