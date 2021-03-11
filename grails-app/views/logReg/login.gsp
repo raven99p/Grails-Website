@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div class="container" style = "width: 500px;">
+    <div class="container" style="width: 500px;">
         <h2>Login here</h2>
         <g:form name="loginForm" controller="logReg" action="varif">
             <div class="mb-3">

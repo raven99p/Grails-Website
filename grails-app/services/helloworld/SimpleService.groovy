@@ -23,7 +23,7 @@ class SimpleService {
         def D_id = id.toInteger()
         def resultRows = sql.rows('''
                                     select * from employee where dept_id=:D_id
-                                    ''',[D_id:D_id])
+                                    ''', [D_id: D_id])
         sql.close()
         return resultRows
     }
@@ -32,7 +32,7 @@ class SimpleService {
         def sql = new Sql(dataSource)
         def resultRows = sql.rows('''
                                     select * from employee where id=:id
-                                    ''',[id:id])
+                                    ''', [id: id])
         sql.close()
         return resultRows
     }
@@ -50,7 +50,7 @@ class SimpleService {
                                             dob=:dob, 
                                             dept_id=:d_id  
                                         where id=:id
-                                        ''',[fName:params.first_name, lName:params.last_name, afm:params.afm, id:id, dob:dob, d_id:d_id])
+                                        ''', [fName: params.first_name, lName: params.last_name, afm: params.afm, id: id, dob: dob, d_id: d_id])
         sql.close()
         return res
     }
@@ -63,7 +63,7 @@ class SimpleService {
                                         insert into employee 
                                             (first_name,last_name,afm,dob,dept_id) 
                                             values (?,?,?,?,?)
-                                        ''',[params.first_name,params.last_name,params.afm,dob,dept_id])
+                                        ''', [params.first_name, params.last_name, params.afm, dob, dept_id])
 
         sql.close()
         return resultRows
@@ -74,7 +74,7 @@ class SimpleService {
         def id_integer = params.id.toInteger()
         sql.execute('''
                         delete from employee where id=:id
-                        ''',[id:id_integer])
+                        ''', [id: id_integer])
         sql.close()
         return 'fire Employee'
     }
@@ -85,7 +85,7 @@ class SimpleService {
                                         insert into dept 
                                             (d_name) 
                                             values (?)
-                                        ''',[params.d_name])
+                                        ''', [params.d_name])
         sql.close()
         return resultRows
     }
@@ -97,7 +97,7 @@ class SimpleService {
                                         update dept 
                                         set d_name=:d_name 
                                         where id=:d_id
-                                        ''',[d_name:params.d_name,d_id:d_id])
+                                        ''', [d_name: params.d_name, d_id: d_id])
         sql.close()
         return res
     }
@@ -108,29 +108,28 @@ class SimpleService {
         try {
             sql.execute('''
                         delete from dept where id=:id
-                        ''',[id:id_integer])
+                        ''', [id: id_integer])
             sql.close()
             return true
         }
-        catch(e) {
+        catch (e) {
             sql.close()
             return false
 
         }
 
     }
+
     def getDeptById(id) {
         def sql = new Sql(dataSource)
         def d_id = id.toInteger()
         def resultRows = sql.rows('''
                                     select d_name from dept where id=:id
-                                    ''',[id:d_id])
+                                    ''', [id: d_id])
         sql.close()
         return resultRows.d_name
 
     }
-
-
 
 
 }

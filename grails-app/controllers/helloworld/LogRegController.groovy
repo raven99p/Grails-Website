@@ -2,22 +2,22 @@ package helloworld
 
 class LogRegController {
     def CredService
+
     def index() {
-        render(view:"login")
+        render(view: "login")
     }
 
     def varif() {
 
-        if(request.method == 'POST') {
+        if (request.method == 'POST') {
             def res = CredService.getPwdByUser(params)
-            if(res) {
+            if (res) {
                 def nickname = params.username.split('@')
                 session["user"] = [nickname[0]]
-                redirect(controller: 'employee', action:'index')
-            }
-            else {
+                redirect(controller: 'employee', action: 'index')
+            } else {
                 flash.message = "User not found"
-                redirect(controller:'logReg')
+                redirect(controller: 'logReg')
             }
         }
     }
