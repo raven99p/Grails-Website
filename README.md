@@ -6,3 +6,4 @@ DONE:
   Employees table: Edit, Delete, Back to departments
 
 TODO: Make it an attractive UI with Bootstrap
+FIX: change integer AFM to varchar 
