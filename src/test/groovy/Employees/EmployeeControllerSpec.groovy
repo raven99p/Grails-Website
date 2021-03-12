@@ -1,10 +1,9 @@
-package helloworld
+package Employees
 
-import LoginC.LogRegController
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-class LogRegControllerSpec extends Specification implements ControllerUnitTest<LogRegController> {
+class EmployeeControllerSpec extends Specification implements ControllerUnitTest<EmployeeController> {
 
     def setup() {
     }

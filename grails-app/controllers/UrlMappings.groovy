@@ -1,4 +1,4 @@
-package helloworld
+
 
 class UrlMappings {
 
@@ -9,10 +9,10 @@ class UrlMappings {
             }
         }
 
-        "/"(controller:'logReg', action:'index')
+        "/"(controller:'logReg')
         "500"(view:'/error')
         "404"(view:'/notFound')
-        //"/varif/$id?"(controller: 'logReg', action: 'varif')
+
 
     }
 }

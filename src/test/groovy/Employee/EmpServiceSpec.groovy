@@ -1,10 +1,9 @@
-package helloworld
+package Employee
 
-import Login.CredService
 import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class CredServiceSpec extends Specification implements ServiceUnitTest<CredService>{
+class EmpServiceSpec extends Specification implements ServiceUnitTest<EmpService>{
 
     def setup() {
     }

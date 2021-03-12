@@ -1,4 +1,4 @@
-package helloworld
+package LoginC
 
 class LogRegController {
     def CredService
@@ -14,7 +14,7 @@ class LogRegController {
             if (res) {
                 def nickname = params.username.split('@')
                 session["user"] = [nickname[0]]
-                redirect(controller: 'employee', action: 'index')
+                redirect(controller: 'General', action: 'showDepartments')
             } else {
                 flash.message = "User not found"
                 redirect(controller: 'logReg')
@@ -22,10 +22,9 @@ class LogRegController {
         }
     }
 
-
     def logout() {
         session.invalidate()
-        redirect(controller: 'logReg')
+        redirect(controller: 'LogReg')
     }
 
 }

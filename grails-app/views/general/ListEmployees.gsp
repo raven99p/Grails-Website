@@ -34,7 +34,7 @@
 <body>
 <div class="container" style="width: 900px;">
 
-    <h2>Employees of Department : ${d_name}</h2>
+    <h2>Employees of Department : ${dept_name}</h2>
     <table class="table">
         <thead class="thead-dark">
         <tr>
@@ -55,10 +55,10 @@
                 <td>${employee.afm}</td>
                 <td>${employee.dob}</td>
                 <td>
-                    <g:link controller="employee" action="editEmpId" params="[id: employee.id]">
+                    <g:link controller="Employee" action="editEmpId" params="[id: employee.id]">
                         <button type="button" class="btn btn-primary">Edit</button>
                     </g:link>
-                    <g:link controller="employee" action="deleteEmployee" params="[id: employee.id, dept_id: dept_id]">
+                    <g:link controller="Employee" action="deleteEmployee" params="[id: employee.id, dept_id: dept_id]">
                         <button type="button" class="btn btn-primary">Delete</button>
                     </g:link>
                 </td>
@@ -66,7 +66,7 @@
         </g:each>
         </tbody>
     </table>
-    <g:link controller="employee" action="index">
+    <g:link controller="General" action="showDepartments">
         <button type="button" class="btn btn-primary">Back to Departments</button>
     </g:link>
 

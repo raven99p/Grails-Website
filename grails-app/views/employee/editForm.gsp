@@ -34,7 +34,7 @@
 <body>
 <div class="container" style="width: 500px;">
     <h2>This is the editing form of employee</h2>
-    <g:form name="loginForm" controller="employee" action="updateEmployeeForm">
+    <g:form name="loginForm" controller="Employee" action="updateEmployeeForm">
         <div class="mb-3">
             <label class="form-label">id</label>
             <input name="id" class="form-control" required="true" value=${res.id[0]} readonly><br/>

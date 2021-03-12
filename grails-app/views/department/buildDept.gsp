@@ -2,9 +2,8 @@
   Created by IntelliJ IDEA.
   User: paulinho ellul
   Date: 11/3/2021
-  Time: 2:41 μ.μ.
+  Time: 2:31 μ.μ.
 --%>
-
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -19,7 +18,7 @@
 
 <html>
 <head>
-    <title>Edit Form</title>
+    <title>Create Form</title>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <span class="navbar-text">
@@ -35,19 +34,14 @@
 
 <body>
 <div class="container" style="width: 500px;">
-    <h2>Edit current department</h2>
-    <g:form name="CreateDeptForm" controller="employee" action="updateDept">
-        <div class="mb-3">
-            <label class="form-label">id</label>
-            <input name="dept_id" class="form-control" required="true" value=${dept_id} readonly><br/>
-        </div>
-
+    <h2>Create a new department</h2>
+    <g:form name="CreateDeptForm" controller="Department" action="createDept">
         <div class="mb-3">
             <label class="form-label">Name</label>
-            <input name="d_name" class="form-control" required="true" value= ${d_name}><br/>
+            <input name="d_name" class="form-control" required="true"><br/>
         </div>
 
-        <g:actionSubmit type="button" class="btn btn-primary" value="Save" action="updateDept"/>
+        <g:actionSubmit type="button" class="btn btn-primary" value="Create" action="createDept"/>
     </g:form>
 </div>
 </body>
