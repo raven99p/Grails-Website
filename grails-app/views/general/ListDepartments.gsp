@@ -54,14 +54,16 @@
                 <th scope="row">${department.id}</th>
                 <th scope="row">${department.d_name}</th>
                 <td>
-                    <g:link controller="employee" action="getEmpByDept" params="[table: department.id]">
+                    <g:link controller="General" action="showEmployees" params="[department_id: department.id]">
                         <button type="button" class="btn btn-primary">View</button>
                     </g:link>
-                    <g:link controller="employee" action="updateDeptForm"
+
+                    <g:link controller="Department" action="updateDeptForm"
                             params="[d_id: department.id, d_name: department.d_name]">
                         <button type="button" class="btn btn-primary">Edit</button>
                     </g:link>
-                    <g:link controller="employee" action="deleteDept" params="[d_id: department.id]">
+
+                    <g:link controller="Department" action="deleteDept" params="[d_id: department.id]">
                         <button type="button" class="btn btn-primary">Delete</button>
                     </g:link>
                 </td>
@@ -74,10 +76,10 @@
 
 
 
-    <g:link controller="employee" action="createEmployeeForm" id="create_Employee">
+    <g:link controller="Employee" action="createEmployeeForm" id="create_Employee">
         <button type="button" class="btn btn-primary">Create new employee</button>
     </g:link>
-    <g:link controller="employee" action="createDeptForm">
+    <g:link controller="Department" action="createDeptForm">
         <button type="button" class="btn btn-primary">Create new department</button>
     </g:link>
 

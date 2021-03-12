@@ -1,14 +1,13 @@
-package helloworld
+
+
+import Login.CredService
 
 
 class AuthInterceptor {
 
-    CredService credService
-
     AuthInterceptor() {
-        match controller: 'employee'
+        matchAll().excludes(controllerClass:'LogReg')
     }
-
 
     boolean before() {
         if (session.getAttribute("user") != null) {

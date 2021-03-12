@@ -1,10 +1,9 @@
-package helloworld
+package General
 
-import LoginC.LogRegController
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-class LogRegControllerSpec extends Specification implements ControllerUnitTest<LogRegController> {
+class GeneralControllerSpec extends Specification implements ControllerUnitTest<GeneralController> {
 
     def setup() {
     }
