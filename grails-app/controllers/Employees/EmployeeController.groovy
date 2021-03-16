@@ -3,11 +3,13 @@ package Employees
 class EmployeeController {
     def EmpService
     def GenService
+    def DeptService
     def editEmpId(int id) {
         def res = EmpService.getEmpById(id)
         def department = GenService.getDept()
+        def defaultDepartment = DeptService.getDeptById(res.dept_id[0])
         //[id,fist_name,last_name,afm,dob,dept_id]
-        render(view: "editForm", model: [res: res, allDeps: department])
+        render(view: "editForm", model: [res: res, allDeps: department, defaultDepartment:defaultDepartment])
     }
     def updateEmployeeForm() {
         EmpService.updateEmp(params)

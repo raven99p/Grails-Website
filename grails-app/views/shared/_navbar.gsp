@@ -32,7 +32,7 @@
                 </li>
             </ul>
             <span class="navbar-text">
-                Logged in as: ${session["user"][0]}
+                Logged in as: ${session["user"]}
             </span>
             <g:link controller="logReg" action="logout">
                 <button type="button" class="btn btn-link">Logout</button>

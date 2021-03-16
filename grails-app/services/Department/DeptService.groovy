@@ -46,6 +46,14 @@ class DeptService {
 
         }
     }
+    def getDeptById(int id) {
+        def sql = new Sql(dataSource)
+        def resultRows = sql.rows('''
+                                    select * from dept where id=:id
+                                    ''', [id: id])
+        sql.close()
+        return resultRows
+    }
 
 
 }

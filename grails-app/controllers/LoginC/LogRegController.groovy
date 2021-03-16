@@ -13,7 +13,7 @@ class LogRegController {
             def res = CredService.getPwdByUser(params)
             if (res) {
                 def nickname = params.username.split('@')
-                session["user"] = [nickname[0]]
+                session["user"] = nickname[0]
                 redirect(controller: 'General', action: 'showDepartments')
             } else {
                 flash.message = "User not found"
