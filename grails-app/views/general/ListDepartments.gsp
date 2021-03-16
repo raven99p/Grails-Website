@@ -15,7 +15,7 @@
 
 
 <head>
-
+    <title>Υποκαταστήματα</title>
     <g:render template="/shared/navbar"/>
 
 </head>
