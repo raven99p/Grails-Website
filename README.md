@@ -1,28 +1,39 @@
+## Currently upgrading UI..
+
 # Login screen
 
 
 ![GitHub Logo](/images/Login.jpg)
 
 
-# Main department table
-
+# Departments
 
 ![GitHub Logo](/images/Departments.jpg)
 
-# Editing form of departments
 
+# Create Department
+
+![GitHub Logo](/images/CreateDepartment.jpg)
+
+
+# Edit Department
 
 ![GitHub Logo](/images/EditDepartment.jpg)
 
 
-# Employees table
-
+# Employees
 
 ![GitHub Logo](/images/Employees.jpg)
 
 
-# Editing form of employees
 
+# Create Employees
+
+![GitHub Logo](/images/CreateEmployee.jpg)
+
+
+
+# Edit Employees
 
 ![GitHub Logo](/images/EditEmployee.jpg)
 
