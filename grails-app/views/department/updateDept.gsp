@@ -28,7 +28,7 @@
 
         <div class="mb-3">
             <label class="form-label">Name</label>
-            <input name="d_name" class="form-control" required="true" value= ${d_name}><br/>
+            <input name="d_name" class="form-control" required="true" value= ${d_name} maxlength="10"><br/>
         </div>
 
         <g:actionSubmit type="button" class="btn btn-primary" value="Save" action="updateDept"/>

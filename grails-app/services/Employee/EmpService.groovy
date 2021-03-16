@@ -4,6 +4,7 @@ import grails.gorm.transactions.Transactional
 import groovy.sql.Sql
 
 import java.sql.Date
+import java.text.SimpleDateFormat
 
 @Transactional
 class EmpService {
@@ -12,7 +13,7 @@ class EmpService {
         def sql = new Sql(dataSource)
         try {
             def resultRows = sql.rows('''
-                                    select * from employee where id=:id
+                                    select *,to_char(dob, 'DD-MM-YYYY') as greekDate from employee where id=:id
                                     ''', [id: id])
             sql.close()
             return resultRows
@@ -27,7 +28,9 @@ class EmpService {
     def updateEmp(params) {
         def sql = new Sql(dataSource)
         def id = params.id.toInteger()
-        def dob = Date.valueOf(params.dob)
+        def temp = params.dob.split("-")
+        def new_date = temp[2] + "-" + temp[1] + "-" + temp[0]
+        def dob = Date.valueOf(new_date)
         def d_id = params.dept_id.toInteger()
         try {
             def res = sql.executeUpdate('''
@@ -51,7 +54,12 @@ class EmpService {
 
     def createEmp(params) {
         def sql = new Sql(dataSource)
-        def dob = Date.valueOf(params.dob)
+        def temp = params.dob.split("-")
+        def new_date = temp[2] + "-" + temp[1] + "-" + temp[0]
+        def dob = Date.valueOf(new_date)
+
+
+
         def dept_id = params.dept_id.toInteger()
         try {
             def resultRows = sql.execute('''

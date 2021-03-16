@@ -17,9 +17,8 @@ class EmployeeController {
     }
     def updateEmployeeForm() {
         EmpService.updateEmp(params)
-        def res = GenService.getEmpByDept(params.dept_id)
+        //def res = GenService.getEmpByDept(params.dept_id)
         //[id,fist_name,last_name,afm,dob,dept_id]
-
         redirect(controller: 'General', action: 'showEmployees', params: [department_id: params.dept_id])
     }
 

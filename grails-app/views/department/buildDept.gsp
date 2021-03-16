@@ -22,7 +22,7 @@
     <g:form name="CreateDeptForm" controller="Department" action="createDept">
         <div class="mb-3">
             <label class="form-label">Name</label>
-            <input name="d_name" class="form-control" required="true"><br/>
+            <input name="d_name" class="form-control" required="true" maxlength="10"><br/>
         </div>
 
         <g:actionSubmit type="button" class="btn btn-primary" value="Create" action="createDept"/>

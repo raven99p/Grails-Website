@@ -27,7 +27,7 @@ class GenService {
         def D_id = id.toInteger()
         try {
             def resultRows = sql.rows('''
-                                    select * from employee where dept_id=:D_id
+                                    select *,to_char(dob, 'DD-MM-YYYY') as greekDate from employee where dept_id=:D_id
                                     ''', [D_id: D_id])
             sql.close()
             return resultRows

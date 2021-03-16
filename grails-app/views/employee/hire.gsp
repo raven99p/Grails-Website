@@ -37,7 +37,7 @@
 
         <div class="mb-3">
             <label class="form-label">Date of birth</label>
-            <input name="dob" class="form-control" required="true" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{1,2}-\d{1,2}"  ><br/>
+            <input name="dob" class="form-control" required="true" placeholder="DD-MM-YYYY" pattern="\d{1,2}-\d{1,2}-\d{4}"  ><br/>
         </div>
 
         <div class="mb-3">
