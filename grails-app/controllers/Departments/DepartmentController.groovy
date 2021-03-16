@@ -1,15 +1,15 @@
 package Departments
 
 class DepartmentController {
-    def DeptService
+    def deptService
 
     def createDeptForm() {
         render(view: "buildDept")
     }
 
     def createDept() {
-        DeptService.createDept(params)
-        redirect(controller: 'General', action:'showDepartments')
+        deptService.createDept(params)
+        redirect(controller: 'general', action:'showDepartments')
     }
 
     def updateDeptForm() {
@@ -17,12 +17,12 @@ class DepartmentController {
     }
 
     def updateDept() {
-        DeptService.updateDept(params)
-        redirect(controller: 'General', action:'showDepartments')
+        deptService.updateDept(params)
+        redirect(controller: 'general', action:'showDepartments')
     }
 
     def deleteDept() {
-        DeptService.deleteDept(params)
-        redirect(controller: 'General', action:'showDepartments')
+        deptService.deleteDept(params)
+        redirect(controller: 'general', action:'showDepartments')
     }
 }

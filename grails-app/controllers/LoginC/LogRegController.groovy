@@ -1,7 +1,7 @@
 package LoginC
 
 class LogRegController {
-    def CredService
+    def credService
 
     def index() {
         render(view: "login")
@@ -10,11 +10,11 @@ class LogRegController {
     def varif() {
 
         if (request.method == 'POST') {
-            def res = CredService.getPwdByUser(params)
+            def res = credService.getPwdByUser(params)
             if (res) {
                 def nickname = params.username.split('@')
                 session["user"] = nickname[0]
-                redirect(controller: 'General', action: 'showDepartments')
+                redirect(controller: 'general', action: 'showDepartments')
             } else {
                 flash.message = "User not found"
                 redirect(controller: 'logReg')
