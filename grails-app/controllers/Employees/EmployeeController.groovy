@@ -7,6 +7,10 @@ class EmployeeController {
     def editEmpId(int id) {
         def res = EmpService.getEmpById(id)
         def department = GenService.getDept()
+        if(!res) {
+            render("There is no Employee with id:${id}")
+            return "Error"
+        }
         def defaultDepartment = DeptService.getDeptById(res.dept_id[0])
         //[id,fist_name,last_name,afm,dob,dept_id]
         render(view: "editForm", model: [res: res, allDeps: department, defaultDepartment:defaultDepartment])
@@ -15,6 +19,7 @@ class EmployeeController {
         EmpService.updateEmp(params)
         def res = GenService.getEmpByDept(params.dept_id)
         //[id,fist_name,last_name,afm,dob,dept_id]
+
         redirect(controller: 'General', action: 'showEmployees', params: [department_id: params.dept_id])
     }
 

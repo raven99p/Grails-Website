@@ -8,30 +8,51 @@ class GenService {
     def dataSource
     def getDept() {
         def sql = new Sql(dataSource)
-        def resultRows = sql.rows('''
+        try {
+            def resultRows = sql.rows('''
                                     select * from dept
                                     ''')
-        sql.close()
-        return resultRows
+            sql.close()
+            return resultRows
+        }
+        catch(e) {
+            sql.close()
+            return false
+        }
+
     }
 
     def getEmpByDept(id) {
         def sql = new Sql(dataSource)
         def D_id = id.toInteger()
-        def resultRows = sql.rows('''
+        try {
+            def resultRows = sql.rows('''
                                     select * from employee where dept_id=:D_id
                                     ''', [D_id: D_id])
-        sql.close()
-        return resultRows
+            sql.close()
+            return resultRows
+        }
+        catch(e) {
+            sql.close()
+            return false
+        }
+
     }
 
     def getDeptById(id) {
         def sql = new Sql(dataSource)
         def d_id = id.toInteger()
-        def resultRows = sql.rows('''
+        try {
+            def resultRows = sql.rows('''
                                     select d_name from dept where id=:id
                                     ''', [id: d_id])
-        sql.close()
-        return resultRows.d_name
+            sql.close()
+            return resultRows.d_name
+        }
+        catch(e) {
+            sql.close()
+            return false
+        }
+
     }
 }
