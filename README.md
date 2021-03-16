@@ -6,27 +6,36 @@
 ![GitHub Logo](/images/Login.jpg)
 
 
-# Main department table
-
+# Departments
 
 ![GitHub Logo](/images/Departments.jpg)
 
-# Editing form of departments
+
+# Create Department
+
+![GitHub Logo](/images/CreateDepartments.jpg)
 
 
-![GitHub Logo](/images/EditDepartment.jpg)
+# Edit Department
+
+![GitHub Logo](/images/EditDepartments.jpg)
 
 
-# Employees table
-
+# Employees
 
 ![GitHub Logo](/images/Employees.jpg)
 
 
-# Editing form of employees
+
+# Create Employees
+
+![GitHub Logo](/images/CreateEmployees.jpg)
 
 
-![GitHub Logo](/images/EditEmployee.jpg)
+
+# Edit Employees
+
+![GitHub Logo](/images/EditEmployees.jpg)
 
 
 
