@@ -13,12 +13,12 @@
 
 # Create Department
 
-![GitHub Logo](/images/CreateDepartments.jpg)
+![GitHub Logo](/images/CreateDepartment.jpg)
 
 
 # Edit Department
 
-![GitHub Logo](/images/EditDepartments.jpg)
+![GitHub Logo](/images/EditDepartment.jpg)
 
 
 # Employees
@@ -29,13 +29,13 @@
 
 # Create Employees
 
-![GitHub Logo](/images/CreateEmployees.jpg)
+![GitHub Logo](/images/CreateEmployee.jpg)
 
 
 
 # Edit Employees
 
-![GitHub Logo](/images/EditEmployees.jpg)
+![GitHub Logo](/images/EditEmployee.jpg)
 
 
 
