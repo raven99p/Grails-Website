@@ -1,5 +1,3 @@
-## Currently upgrading UI..
-
 # Login screen
 
 
