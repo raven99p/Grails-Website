@@ -14,8 +14,7 @@
     <title>Edit Form</title>
     <g:render template="/shared/navbar" />
 </head>
-${res}
-${defaultDepartment}
+
 <body>
 <div class="container" style="width: 500px;">
     <h2>This is the editing form of employee</h2>
