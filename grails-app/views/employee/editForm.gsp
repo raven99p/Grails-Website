@@ -14,7 +14,8 @@
     <title>Edit Form</title>
     <g:render template="/shared/navbar" />
 </head>
-
+${res}
+${defaultDepartment}
 <body>
 <div class="container" style="width: 500px;">
     <h2>This is the editing form of employee</h2>
@@ -56,10 +57,12 @@
 
         <div class="mb-3">
             <label class="form-label">Department Id</label>
-            <select name="dept_id" class="form-select" aria-label="Default select example">
+            <select name="dept_id" class="form-select" aria-label="Default select example" >
+                <option name="dept_id" value="${defaultDepartment.id[0]}" select="selected" >${defaultDepartment.d_name[0]}</option>
                 <g:each var="department" in="${allDeps}">
-                    <option name="dept_id" value="${department.id}" selected>${department.d_name}</option>
+                    <option name="dept_id" value="${department.id}" >${department.d_name}</option>
                 </g:each>
+
             </select>
         </div>
 
