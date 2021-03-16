@@ -75,5 +75,11 @@
 
 </div>
     <g:render template="/shared/footer" />
+    <style>
+       body {background-image: url("https://images.unsplash.com/photo-1496307653780-42ee777d4833?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHdoaXRlJTIwZGVza3RvcHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
+           background-repeat:no-repeat;
+           background-size: cover;
+       }
+    </style>
 </body>
 </html>
