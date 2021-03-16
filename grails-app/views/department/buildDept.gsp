@@ -6,30 +6,14 @@
 --%>
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-        crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 
 
 <html>
 <head>
     <title>Create Form</title>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-text">
-                <h4>Logged in as: ${session["user"][0]}</h4>
-                <g:link controller="logReg" action="logout">
-                    <button type="button" class="btn btn-primary">Logout</button>
-                </g:link>
-
-            </span>
-        </div>
-    </nav>
+    <g:render template="/shared/navbar" />
 </head>
 
 <body>
@@ -44,5 +28,6 @@
         <g:actionSubmit type="button" class="btn btn-primary" value="Create" action="createDept"/>
     </g:form>
 </div>
+<g:render template="/shared/footer" />
 </body>
 </html>
