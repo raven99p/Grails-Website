@@ -6,6 +6,7 @@ import groovy.sql.Sql
 @Transactional
 class GenService {
     def dataSource
+
     def getDept() {
         def sql = new Sql(dataSource)
         try {
@@ -15,7 +16,7 @@ class GenService {
             sql.close()
             return resultRows
         }
-        catch(e) {
+        catch (e) {
             sql.close()
             return false
         }
@@ -32,7 +33,7 @@ class GenService {
             sql.close()
             return resultRows
         }
-        catch(e) {
+        catch (e) {
             sql.close()
             return false
         }
@@ -49,7 +50,7 @@ class GenService {
             sql.close()
             return resultRows.d_name
         }
-        catch(e) {
+        catch (e) {
             sql.close()
             return false
         }

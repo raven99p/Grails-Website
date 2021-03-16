@@ -21,7 +21,7 @@ class CredService {
                 return false
             }
         }
-        catch(e) {
+        catch (e) {
             return false
         }
 

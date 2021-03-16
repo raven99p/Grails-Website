@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat
 @Transactional
 class EmpService {
     def dataSource
+
     def getEmpById(int id) {
         def sql = new Sql(dataSource)
         try {
@@ -18,7 +19,7 @@ class EmpService {
             sql.close()
             return resultRows
         }
-        catch(e) {
+        catch (e) {
             sql.close()
             return false
         }
@@ -45,7 +46,7 @@ class EmpService {
             sql.close()
             return res
         }
-        catch(e) {
+        catch (e) {
             sql.close()
             return false
         }
@@ -59,7 +60,6 @@ class EmpService {
         def dob = Date.valueOf(new_date)
 
 
-
         def dept_id = params.dept_id.toInteger()
         try {
             def resultRows = sql.execute('''
@@ -70,7 +70,7 @@ class EmpService {
             sql.close()
             return resultRows
         }
-        catch(e) {
+        catch (e) {
             sql.close()
             return false
         }
@@ -87,7 +87,7 @@ class EmpService {
             sql.close()
             return true
         }
-        catch(e) {
+        catch (e) {
             sql.close()
             return false
         }

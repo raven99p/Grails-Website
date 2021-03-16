@@ -9,7 +9,7 @@ class DeptService {
 
     def createDept(params) {
         def sql = new Sql(dataSource)
-        try{
+        try {
             def resultRows = sql.execute('''
                                         insert into dept 
                                             (d_name) 
@@ -18,7 +18,7 @@ class DeptService {
             sql.close()
             return resultRows
         }
-        catch(e){
+        catch (e) {
             sql.close()
             return false
         }
@@ -29,7 +29,7 @@ class DeptService {
     def updateDept(params) {
         def sql = new Sql(dataSource)
         def d_id = params.dept_id.toInteger()
-        try{
+        try {
             def res = sql.executeUpdate('''
                                         update dept 
                                         set d_name=:d_name 
@@ -38,7 +38,7 @@ class DeptService {
             sql.close()
             return res
         }
-        catch(e) {
+        catch (e) {
             sql.close()
             return false
         }
@@ -61,6 +61,7 @@ class DeptService {
 
         }
     }
+
     def getDeptById(int id) {
         def sql = new Sql(dataSource)
         try {
@@ -70,7 +71,7 @@ class DeptService {
             sql.close()
             return resultRows
         }
-        catch(e){
+        catch (e) {
             sql.close()
             return false
         }
