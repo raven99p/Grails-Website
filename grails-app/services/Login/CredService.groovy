@@ -21,6 +21,7 @@ class CredService {
             }
         }
         catch (e) {
+            e.printStackTrace();
             return false
         }
 

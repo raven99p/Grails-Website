@@ -19,6 +19,7 @@ class EmpService {
             return resultRows
         }
         catch (e) {
+            e.printStackTrace();
             return false
         }
 
@@ -44,6 +45,7 @@ class EmpService {
             return res
         }
         catch (e) {
+            e.printStackTrace();
             return "Failed: Employee update"
         }
 
@@ -66,6 +68,7 @@ class EmpService {
             return resultRows
         }
         catch (e) {
+            e.printStackTrace();
             return "Failed: Employee create"
         }
 
@@ -81,6 +84,7 @@ class EmpService {
             return true
         }
         catch (e) {
+            e.printStackTrace();
             return "Failed: Employee delete"
         }
 

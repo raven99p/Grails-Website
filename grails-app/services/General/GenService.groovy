@@ -16,6 +16,7 @@ class GenService {
             return resultRows
         }
         catch (e) {
+            e.printStackTrace();
             return false
         }
 
@@ -31,6 +32,7 @@ class GenService {
             return resultRows
         }
         catch (e) {
+            e.printStackTrace();
             return false
         }
 
@@ -46,6 +48,7 @@ class GenService {
             return resultRows.d_name
         }
         catch (e) {
+            e.printStackTrace();
             return false
         }
 
