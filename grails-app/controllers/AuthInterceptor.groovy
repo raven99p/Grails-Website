@@ -1,7 +1,7 @@
 class AuthInterceptor {
 
     AuthInterceptor() {
-        matchAll().excludes(controllerClass:'LogReg')
+        matchAll().excludes(controllerClass:'logReg')
     }
 
     boolean before() {

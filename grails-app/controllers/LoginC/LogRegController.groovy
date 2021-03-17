@@ -24,7 +24,7 @@ class LogRegController {
 
     def logout() {
         session.invalidate()
-        redirect(controller: 'LogReg')
+        redirect(controller: 'logReg')
     }
 
 }

@@ -20,7 +20,7 @@ class DeptService {
         }
         catch (e) {
             sql.close()
-            return false
+            return "Failed: Department create"
         }
 
 
@@ -40,7 +40,7 @@ class DeptService {
         }
         catch (e) {
             sql.close()
-            return false
+            return "Failed: Department update"
         }
 
     }
@@ -57,7 +57,7 @@ class DeptService {
         }
         catch (e) {
             sql.close()
-            return false
+            return "Failed: Department delete"
 
         }
     }

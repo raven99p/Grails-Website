@@ -48,7 +48,7 @@ class EmpService {
         }
         catch (e) {
             sql.close()
-            return false
+            return "Failed: Employee update"
         }
 
     }
@@ -72,7 +72,7 @@ class EmpService {
         }
         catch (e) {
             sql.close()
-            return false
+            return "Failed: Employee create"
         }
 
     }
@@ -89,7 +89,7 @@ class EmpService {
         }
         catch (e) {
             sql.close()
-            return false
+            return "Failed: Employee delete"
         }
 
     }
