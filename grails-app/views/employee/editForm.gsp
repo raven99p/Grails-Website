@@ -44,7 +44,7 @@
         <div class="mb-3">
             <label class="form-label">Ημερομηνία γέννησης</label>
             <input name="dob" class="form-control" required="true"
-                   value=${res.greekDate[0]} pattern="\d{1,2}-\d{1,2}-\d{4}"><br/>
+                   value=${res.greekDate[0]} pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"><br/>
         </div>
         <!--
         <g:select class="form-select" size="3" aria-label="size 3 select example"

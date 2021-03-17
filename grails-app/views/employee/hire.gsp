@@ -39,7 +39,7 @@
         <div class="mb-3">
             <label class="form-label">Ημερομηνία γέννησης</label>
             <input name="dob" class="form-control" required="true" placeholder="DD-MM-YYYY"
-                   pattern="\d{1,2}-\d{1,2}-\d{4}"><br/>
+                   pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"><br/>
         </div>
 
         <div class="mb-3">
