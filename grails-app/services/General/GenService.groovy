@@ -13,11 +13,9 @@ class GenService {
             def resultRows = sql.rows('''
                                     select * from dept
                                     ''')
-            sql.close()
             return resultRows
         }
         catch (e) {
-            sql.close()
             return false
         }
 
@@ -30,11 +28,9 @@ class GenService {
             def resultRows = sql.rows('''
                                     select *,to_char(dob, 'DD-MM-YYYY') as greekDate from employee where dept_id=:D_id
                                     ''', [D_id: D_id])
-            sql.close()
             return resultRows
         }
         catch (e) {
-            sql.close()
             return false
         }
 
@@ -47,11 +43,9 @@ class GenService {
             def resultRows = sql.rows('''
                                     select d_name from dept where id=:id
                                     ''', [id: d_id])
-            sql.close()
             return resultRows.d_name
         }
         catch (e) {
-            sql.close()
             return false
         }
 

@@ -15,15 +15,11 @@ class DeptService {
                                             (d_name) 
                                             values (?)
                                         ''', [params.d_name])
-            sql.close()
             return resultRows
         }
         catch (e) {
-            sql.close()
             return "Failed: Department create"
         }
-
-
     }
 
     def updateDept(params) {
@@ -35,11 +31,9 @@ class DeptService {
                                         set d_name=:d_name 
                                         where id=:d_id
                                         ''', [d_name: params.d_name, d_id: d_id])
-            sql.close()
             return res
         }
         catch (e) {
-            sql.close()
             return "Failed: Department update"
         }
 
@@ -52,11 +46,9 @@ class DeptService {
             sql.execute('''
                         delete from dept where id=:id
                         ''', [id: id_integer])
-            sql.close()
             return true
         }
         catch (e) {
-            sql.close()
             return "Failed: Department delete"
 
         }
@@ -68,11 +60,9 @@ class DeptService {
             def resultRows = sql.rows('''
                                     select * from dept where id=:id
                                     ''', [id: id])
-            sql.close()
             return resultRows
         }
         catch (e) {
-            sql.close()
             return false
         }
 

@@ -16,11 +16,9 @@ class EmpService {
             def resultRows = sql.rows('''
                                     select *,to_char(dob, 'DD-MM-YYYY') as greekDate from employee where id=:id
                                     ''', [id: id])
-            sql.close()
             return resultRows
         }
         catch (e) {
-            sql.close()
             return false
         }
 
@@ -43,11 +41,9 @@ class EmpService {
                                             dept_id=:d_id  
                                         where id=:id
                                         ''', [fName: params.first_name, lName: params.last_name, afm: params.afm, id: id, dob: dob, d_id: d_id])
-            sql.close()
             return res
         }
         catch (e) {
-            sql.close()
             return "Failed: Employee update"
         }
 
@@ -67,11 +63,9 @@ class EmpService {
                                             (first_name,last_name,afm,dob,dept_id) 
                                             values (?,?,?,?,?)
                                         ''', [params.first_name, params.last_name, params.afm, dob, dept_id])
-            sql.close()
             return resultRows
         }
         catch (e) {
-            sql.close()
             return "Failed: Employee create"
         }
 
@@ -84,11 +78,9 @@ class EmpService {
             sql.execute('''
                         delete from employee where id=:id
                         ''', [id: id_integer])
-            sql.close()
             return true
         }
         catch (e) {
-            sql.close()
             return "Failed: Employee delete"
         }
 

@@ -14,7 +14,6 @@ class CredService {
             def resultRows = sql.rows('''
                                     select password, is_active from users where username=:username
                                     ''', [username: params.username])
-            sql.close()
             if (params.password.toString() == resultRows.password[0] && resultRows.is_active[0] == true) {
                 return true
             } else {
