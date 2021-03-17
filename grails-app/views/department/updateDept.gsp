@@ -14,7 +14,7 @@
 
 <html>
 <head>
-    <title>Αλλαγή στοιχείων υποκαταστήματος</title>
+    <title>Αλλαγή στοιχείων τμήματος</title>
     <g:render template="/shared/navbar"/>
 </head>
 

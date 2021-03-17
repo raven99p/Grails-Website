@@ -15,7 +15,7 @@
 
 
 <head>
-    <title>Υποκαταστήματα</title>
+    <title>τμήματα</title>
     <g:render template="/shared/navbar"/>
 
 </head>
@@ -23,12 +23,12 @@
 <body>
 
 <div class="container" style="width: 650px;">
-    <h2>Υποκαταστήματα</h2>
+    <h2>Τμήματα</h2>
 
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">Κωδικός αιρθμός</th>
+            <th scope="col">Κωδικός αριθμός</th>
             <th scope="col">Όνομα</th>
             <th scope="col">Επιλογές</th>
         </tr>

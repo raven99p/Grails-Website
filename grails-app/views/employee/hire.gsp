@@ -43,7 +43,7 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Κωδικός υποκαταστήματος</label>
+            <label class="form-label">Κωδικός τμήματος</label>
             <select name="dept_id" class="form-select" aria-label="Default select example">
                 <g:each var="department" in="${allDeps}">
                     <option name="dept_id" value="${department.id}" selected>${department.d_name}</option>

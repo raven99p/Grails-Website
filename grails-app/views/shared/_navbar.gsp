@@ -30,7 +30,7 @@
                 </li>
                 <li class="nav-item">
                     <g:link controller="Department" action="createDeptForm">
-                        <button type="button" class="btn btn-link">Δημιουργία νέου υποκαταστήματος</button>
+                        <button type="button" class="btn btn-link">Δημιουργία νέου τμήματος</button>
                     </g:link>
                 </li>
             </ul>

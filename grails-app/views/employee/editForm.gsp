@@ -58,7 +58,7 @@
         -->
 
         <div class="mb-3">
-            <label class="form-label">Κωδικός αριθμός υποκαταστήματος</label>
+            <label class="form-label">Κωδικός αριθμός τμήματος</label>
             <select name="dept_id" class="form-select" aria-label="Default select example">
                 <option name="dept_id" value="${defaultDepartment.id[0]}"
                         select="selected">${defaultDepartment.d_name[0]}</option>

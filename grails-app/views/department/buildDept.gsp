@@ -13,13 +13,13 @@
 
 <html>
 <head>
-    <title>Δημιουργία υποκαταστήματος</title>
+    <title>Δημιουργία τμήματος</title>
     <g:render template="/shared/navbar"/>
 </head>
 
 <body>
 <div class="container" style="width: 500px;">
-    <h2>Φόρμα δημιουργίας υποκατστήματος</h2>
+    <h2>Φόρμα δημιουργίας τμήματος</h2>
     <g:form name="CreateDeptForm" controller="Department" action="createDept">
         <div class="mb-3">
             <label class="form-label">Όνομα</label>

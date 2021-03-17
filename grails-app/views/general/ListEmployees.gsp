@@ -19,7 +19,7 @@
 <body>
 <div class="container" style="width: 900px;">
 
-    <h2>Υπάλληλοι υποκαταστήματος : ${d_name}</h2>
+    <h2>Υπάλληλοι τμήματος : ${d_name}</h2>
     <table class="table">
         <thead class="thead-dark">
         <tr>
