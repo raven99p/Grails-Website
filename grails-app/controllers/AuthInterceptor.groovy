@@ -5,7 +5,7 @@ class AuthInterceptor {
     }
 
     boolean before() {
-        if (session) {
+        if (session["user"]) {
             return true
         }
         redirect(controller: "logReg")

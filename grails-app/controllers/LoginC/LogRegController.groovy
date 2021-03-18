@@ -14,7 +14,7 @@ class LogRegController {
             if (res) {
                 def nickname = params.username.split('@')
                 session["user"] = nickname[0]
-                redirect(controller: 'general', action: 'showDepartments')
+                redirect(controller: 'department', action: 'showDepartments')
             } else {
                 flash.message = "Ελέγξτε τα στοιχεία που εισάγατε"
                 redirect(controller: 'logReg')

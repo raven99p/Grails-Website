@@ -2,12 +2,20 @@ package Employees
 
 class EmployeeController {
     def empService
-    def genService
     def deptService
+
+    def showEmployees(int dept_id) {
+        def res = empService.getEmpByDept(dept_id)
+        //[id,fist_name,last_name,afm,dob,dept_id]
+
+        def d_name = deptService.getDeptById(dept_id)
+        def allEmployeesInformation = [res: res, d_name: d_name[0]]
+        render(view: "ListEmployees", model: [allEmployeesInformation:allEmployeesInformation])
+    }
 
     def editEmpId(int id) {
         def res = empService.getEmpById(id)
-        def allDeps = genService.getDept()
+        def allDeps = deptService.getAllDepartments()
         if (!res) {
             render("There is no Employee with id:${id}")
             return "Error"
@@ -21,23 +29,23 @@ class EmployeeController {
     def updateEmployeeForm() {
         empService.updateEmp(params)
         //[id,fist_name,last_name,afm,dob,dept_id]
-        redirect(controller: 'general', action: 'showEmployees', params: [dept_id: params.dept_id])
+        redirect(action: 'showEmployees', params: [dept_id: params.dept_id])
     }
 
     def createEmployeeForm() {
-        def res = genService.getDept()
+        def res = deptService.getAllDepartments()
         //[id,d_name]
         render(view: "hire", model: [allDeps: res])
     }
 
     def createEmployee() {
-        empService.createEmp(params)
-        redirect(controller: 'general', action: 'showEmployees', params: [dept_id: params.dept_id])
+        def temp = empService.createEmp(params)
+        redirect(action: 'showEmployees', params: [dept_id: params.dept_id])
     }
 
     def deleteEmployee() {
         empService.deleteEmp(params)
         //[id,fist_name,last_name,afm,dob,dept_id]
-        redirect(controller: 'general', action: 'showEmployees', params: [dept_id: params.dept_id])
+        redirect(action: 'showEmployees', params: [dept_id: params.dept_id])
     }
 }

@@ -17,12 +17,12 @@ class CredService {
             if (params.password.toString() == resultRows.password && resultRows.is_active == true) {
                 return true
             } else {
-                return []
+                return false
             }
         }
         catch (e) {
             e.printStackTrace();
-            return []
+            return false
         }
 
     }

@@ -3,13 +3,19 @@ package Departments
 class DepartmentController {
     def deptService
 
+    def showDepartments() {
+        def res = deptService.getAllDepartments()
+        //[id, d_name]
+        render(view: "ListDepartments", model: [res: res])
+    }
+
     def createDeptForm() {
         render(view: "buildDept")
     }
 
     def createDept() {
         deptService.createDept(params)
-        redirect(controller: 'general', action: 'showDepartments')
+        redirect(action: 'showDepartments')
     }
 
     def updateDeptForm() {
@@ -19,11 +25,11 @@ class DepartmentController {
 
     def updateDept() {
         deptService.updateDept(params)
-        redirect(controller: 'general', action: 'showDepartments')
+        redirect(action: 'showDepartments')
     }
 
     def deleteDept() {
         deptService.deleteDept(params)
-        redirect(controller: 'general', action: 'showDepartments')
+        redirect(action: 'showDepartments')
     }
 }

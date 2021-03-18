@@ -20,7 +20,7 @@
 <div class="container" style="width: 500px;">
 
     <h2>Φόρμα Πρόσληψης</h2>
-    <g:form name="loginForm" controller="Employee" action="createEmployee">
+    <g:form name="loginForm" controller="employee" action="createEmployee">
         <div class="mb-3">
             <label class="form-label">Όνομα</label>
             <input name="first_name" class="form-control" required="true" maxlength="50"><br/>

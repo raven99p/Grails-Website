@@ -63,13 +63,13 @@ class EmpService {
             def resultRows = sql.execute('''
                                         insert into employee 
                                             (first_name,last_name,afm,dob,dept_id) 
-                                            values (firstName, lastName, afm, dob, dept_id)
-                                        ''', [firstName:params.first_name, lastName:params.last_name, afm:params.afm, dob:dob, dept_id:dept_id])
+                                            values (?, ?, ?, ?, ?)
+                                        ''', [params.first_name, params.last_name, params.afm, dob, dept_id])
             return resultRows
         }
         catch (e) {
             e.printStackTrace();
-            return []
+            return 'Failed: create employee'
         }
 
     }
@@ -82,6 +82,22 @@ class EmpService {
                         delete from employee where id=:id
                         ''', [id: id_integer])
             return true
+        }
+        catch (e) {
+            e.printStackTrace();
+            return []
+        }
+
+    }
+
+    def getEmpByDept(id) {
+        def sql = new Sql(dataSource)
+        def D_id = id.toInteger()
+        try {
+            def resultRows = sql.rows('''
+                                    select *,to_char(dob, 'DD-MM-YYYY') as dob from employee where dept_id=:D_id
+                                    ''', [D_id: D_id])
+            return resultRows
         }
         catch (e) {
             e.printStackTrace();
