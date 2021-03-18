@@ -9,12 +9,13 @@ class DeptService {
 
     def createDept(params) {
         def sql = new Sql(dataSource)
+        def departmentName = params.departmentName
         try {
-            def insertion = sql.execute('''
+            def insertion = sql.execute("""
                                         insert into departments 
                                             (departmentName) 
-                                            values (?)
-                                        ''', [params.departmentName])
+                                            values (${departmentName})
+                                        """)
             return insertion
         }
         catch (e) {

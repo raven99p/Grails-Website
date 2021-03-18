@@ -61,11 +61,10 @@ class EmpService {
 
         def departmentId = params.departmentId.toInteger()
         try {
-            def insertion = sql.execute('''
+            def insertion = sql.execute("""
                                         insert into employees 
                                             (firstName,lastName,afm,dob,departmentId) 
-                                            values (?, ?, ?, ?, ?)
-                                        ''', [params.firstName, params.lastName, params.afm, dob, departmentId])
+                                            values (${params.firstName},  ${params.lastName}, ${params.afm}, ${dob}, ${departmentId}) """)
             return insertion
         }
         catch (e) {

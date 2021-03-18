@@ -1,4 +1,4 @@
-package Login
+package Authentication
 
 import grails.gorm.transactions.Transactional
 import groovy.sql.Sql

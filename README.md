@@ -1,4 +1,4 @@
-# Login screen
+# Authentication screen
 
 
 ![GitHub Logo](/images/Login.jpg)
