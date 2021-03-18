@@ -13,8 +13,8 @@ class DeptService {
             def resultRows = sql.execute('''
                                         insert into dept 
                                             (d_name) 
-                                            values (?)
-                                        ''', [params.d_name])
+                                            values (departmentName)
+                                        ''', [departmentName:params.d_name])
             return resultRows
         }
         catch (e) {
@@ -60,9 +60,9 @@ class DeptService {
     def getDeptById(int id) {
         def sql = new Sql(dataSource)
         try {
-            def resultRows = sql.rows('''
-                                    select * from dept where id=:id
-                                    ''', [id: id])
+            def resultRows = sql.firstRow("""
+                                    select d_name from dept where id=:id
+                                    """, [id: id])
             return resultRows
         }
         catch (e) {

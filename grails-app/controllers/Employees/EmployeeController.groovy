@@ -12,9 +12,10 @@ class EmployeeController {
             render("There is no Employee with id:${id}")
             return "Error"
         }
-        def defaultDepartment = deptService.getDeptById(res.dept_id[0])
+        def defaultDepartment = deptService.getDeptById(res.dept_id)
+        render defaultDepartment
         //[id,fist_name,last_name,afm,dob,dept_id]
-        render(view: "editForm", model: [res: res, allDeps: allDeps, defaultDepartment: defaultDepartment])
+        //render(view: "editForm", model: [res: res, allDeps: allDeps, defaultDepartment: defaultDepartment])
     }
 
     def updateEmployeeForm() {

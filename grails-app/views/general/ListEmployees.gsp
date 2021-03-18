@@ -38,7 +38,7 @@
                 <th scope="row">${employee.first_name}</th>
                 <td>${employee.last_name}</td>
                 <td>${employee.afm}</td>
-                <td>${employee.greekDate}</td>
+                <td>${employee.dob}</td>
                 <td>
                     <g:link controller="Employee" action="editEmpId" params="[id: employee.id]">
                         <button type="button" class="btn btn-primary">Διαχείρηση</button>

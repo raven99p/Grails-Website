@@ -11,10 +11,10 @@ class CredService {
     def getPwdByUser(params) {
         def sql = new Sql(dataSource)
         try {
-            def resultRows = sql.rows('''
+            def resultRows = sql.firstRow("""
                                     select password, is_active from users where username=:username
-                                    ''', [username: params.username])
-            if (params.password.toString() == resultRows.password[0] && resultRows.is_active[0] == true) {
+                                    """, [username: params.username])
+            if (params.password.toString() == resultRows.password && resultRows.is_active == true) {
                 return true
             } else {
                 return false
