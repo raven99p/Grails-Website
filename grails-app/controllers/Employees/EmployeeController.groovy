@@ -13,9 +13,9 @@ class EmployeeController {
             return "Error"
         }
         def defaultDepartment = deptService.getDeptById(res.dept_id)
-        render defaultDepartment
         //[id,fist_name,last_name,afm,dob,dept_id]
-        //render(view: "editForm", model: [res: res, allDeps: allDeps, defaultDepartment: defaultDepartment])
+        def employeeInformation = [res: res, allDeps: allDeps, defaultDepartment: defaultDepartment]
+        render(view: "editForm", model: [employeeInformation:employeeInformation])
     }
 
     def updateEmployeeForm() {

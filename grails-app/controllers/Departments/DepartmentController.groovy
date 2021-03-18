@@ -13,7 +13,8 @@ class DepartmentController {
     }
 
     def updateDeptForm() {
-        render(view: "updateDept", model: [d_id: params.d_id, d_name: params.d_name])
+        def departmentInformation = [d_id: params.d_id, d_name: params.d_name]
+        render(view: "updateDept", model: [departmentInformation:departmentInformation])
     }
 
     def updateDept() {

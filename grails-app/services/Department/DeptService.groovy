@@ -61,7 +61,7 @@ class DeptService {
         def sql = new Sql(dataSource)
         try {
             def resultRows = sql.firstRow("""
-                                    select d_name from dept where id=:id
+                                    select * from dept where id=:id
                                     """, [id: id])
             return resultRows
         }

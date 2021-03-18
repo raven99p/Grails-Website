@@ -14,7 +14,7 @@ class EmpService {
         def sql = new Sql(dataSource)
         try {
             def resultRows = sql.firstRow("""
-                                    select *,to_char(dob, 'DD-MM-YYYY') as greekDate from employee where id=:id
+                                    select *,to_char(dob, 'DD-MM-YYYY') as dob from employee where id=:id
                                     """, [id: id])
             return resultRows
         }

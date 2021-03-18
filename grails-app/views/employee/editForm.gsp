@@ -22,47 +22,37 @@
     <g:form name="loginForm" controller="Employee" action="updateEmployeeForm">
         <div class="mb-3">
             <label class="form-label">Κωδικός αριθμός</label>
-            <input name="id" class="form-control" required="true" value=${res.id[0]} readonly><br/>
+            <input name="id" class="form-control" required="true" value=${employeeInformation.res.id} readonly><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Όνομα</label>
             <input name="first_name" class="form-control" required="true"
-                   value=${res.first_name[0]} maxlength="50"><br/>
+                   value=${employeeInformation.res.first_name} maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Επώνυμο</label>
-            <input name="last_name" class="form-control" required="true" value=${res.last_name[0]} maxlength="50"><br/>
+            <input name="last_name" class="form-control" required="true" value=${employeeInformation.res.last_name} maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">ΑΦΜ</label>
-            <input name="afm" class="form-control" required="true" value=${res.afm[0]} maxlength="9"><br/>
+            <input name="afm" class="form-control" required="true" value=${employeeInformation.res.afm} maxlength="9"><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Ημερομηνία γέννησης</label>
             <input name="dob" class="form-control" required="true"
-                   value=${res.greekDate[0]} pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"><br/>
+                   value=${employeeInformation.res.dob} pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"><br/>
         </div>
-        <!--
-        <g:select class="form-select" size="3" aria-label="size 3 select example"
-                  style="width:400px;height:300px;font-size: 20px"
-                  name="dept_id"
-                  from="${dep}"
-                  value="${res.dept_id[0]}"
-                  optionKey="id"
-                  optionValue="d_name"
-                  noSelection="${['1': 'Select One...']}"/>
-        -->
 
         <div class="mb-3">
             <label class="form-label">Κωδικός αριθμός τμήματος</label>
             <select name="dept_id" class="form-select" aria-label="Default select example">
-                <option name="dept_id" value="${defaultDepartment.id[0]}"
-                        select="selected">${defaultDepartment.d_name[0]}</option>
-                <g:each var="department" in="${allDeps}">
+                <option name="dept_id" value="${employeeInformation.defaultDepartment.id}"
+                        select="selected">${employeeInformation.defaultDepartment.d_name}</option>
+                <g:each var="department" in="${employeeInformation.allDeps}">
                     <option name="dept_id" value="${department.id}">${department.d_name}</option>
                 </g:each>
 

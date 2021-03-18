@@ -19,7 +19,7 @@
 <body>
 <div class="container" style="width: 900px;">
 
-    <h2>Υπάλληλοι τμήματος : ${d_name}</h2>
+    <h2>Υπάλληλοι τμήματος : ${allEmployeesInformation.d_name}</h2>
     <table class="table">
         <thead class="thead-dark">
         <tr>
@@ -32,7 +32,7 @@
         </tr>
         </thead>
         <tbody>
-        <g:each var="employee" in="${res}">
+        <g:each var="employee" in="${allEmployeesInformation.res}">
             <tr>
                 <th scope="row">${employee.id}</th>
                 <th scope="row">${employee.first_name}</th>
@@ -43,7 +43,7 @@
                     <g:link controller="Employee" action="editEmpId" params="[id: employee.id]">
                         <button type="button" class="btn btn-primary">Διαχείρηση</button>
                     </g:link>
-                    <g:link controller="Employee" action="deleteEmployee" params="[id: employee.id, dept_id: dept_id]">
+                    <g:link controller="Employee" action="deleteEmployee" params="[id: employee.id, dept_id: allEmployeesInformation.res.dept_id]">
                         <button type="button" class="btn btn-primary">Διαγραφή</button>
                     </g:link>
                 </td>
