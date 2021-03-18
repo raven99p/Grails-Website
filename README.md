@@ -13,43 +13,45 @@
 * [ ] Name the views according to actions, so you dont have to render views
 * [ ] Implement alerts and delete confirmations
 * [ ] Implement local bootstrap
+* [ ] Always format your code
 
 
+# Website Screens #
 
-# Authentication screen
+## Authentication screen ##
 
 
 ![GitHub Logo](/images/Login.jpg)
 
 
-# Departments
+## Departments ##
 
 ![GitHub Logo](/images/Departments.jpg)
 
 
-# Create Department
+## Create Department ##
 
 ![GitHub Logo](/images/CreateDepartment.jpg)
 
 
-# Edit Department
+## Edit Department ##
 
 ![GitHub Logo](/images/EditDepartment.jpg)
 
 
-# Employees
+## Employees ##
 
 ![GitHub Logo](/images/Employees.jpg)
 
 
 
-# Create Employees
+## Create Employees ##
 
 ![GitHub Logo](/images/CreateEmployee.jpg)
 
 
 
-# Edit Employees
+## Edit Employees ##
 
 ![GitHub Logo](/images/EditEmployee.jpg)
 
