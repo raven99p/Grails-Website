@@ -1,12 +1,13 @@
-package LoginC
+package Authentication
 
-class LogRegController {
-    def credService
+class AuthenticationController {
+
+    def authService
 
     def login() {
     }
 
-    def varif() {
+    def varify() {
         if (request.method == 'POST') {
             def res = credService.getUserInformation(params)
             if (res) {
@@ -15,7 +16,7 @@ class LogRegController {
                 redirect(controller: 'department', action: 'showDepartments')
             } else {
                 flash.message = "Τα στοιχεία που εισάγατε είναι λάθος"
-                redirect(controller: 'logReg', action: 'login')
+                redirect(controller: 'authentication', action: 'login')
             }
         }
     }
@@ -24,5 +25,4 @@ class LogRegController {
         session.invalidate()
         redirect(controller: 'logReg', action: 'login')
     }
-
 }

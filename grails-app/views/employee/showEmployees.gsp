@@ -10,14 +10,7 @@
 <!-- Latest compiled and minified CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<script src="/assets/jquery-3.3.1.min.js"></script>
-<script src="/assets/popper.min.js"></script>
-<script src="/assets/bootstrap.js"></script>
-<script src="/assets/bootstrap-confirmation.min.js"></script>
 
 <head>
     <title>Υπάλληλοι</title>
@@ -42,8 +35,8 @@
         <tbody>
         <g:each var="employee" in="${allEmployeesInformation.allEmployeesofDepartment}">
             <tr>
-                <th scope="row">${employee.employeeId}</th>
-                <th>${employee.firstName}</th>
+                <td>${employee.employeeId}</td>
+                <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
                 <td>${employee.afm}</td>
                 <td>${employee.dob}</td>
@@ -54,7 +47,7 @@
                     <g:link controller="employee" action="deleteEmployee"
                             params="[employeeId: employee.employeeId, departmentId: employee.departmentId]">
                         <button type="button" class="btn btn-primary" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');">Διαγραφή</button>
-                        
+
 
 
                     </g:link>

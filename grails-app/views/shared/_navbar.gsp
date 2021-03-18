@@ -35,7 +35,7 @@
                 </li>
             </ul>
             <span class="navbar-text">
-                Συνδεδεμένος ως: ${session["user"]}
+                Συνδεδεμένος ως: [${session["user"]}]
             </span>
             <g:link controller="logReg" action="logout">
                 <button type="button" class="btn btn-link">αποσύνδεση</button>

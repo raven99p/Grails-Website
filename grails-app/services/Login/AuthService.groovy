@@ -4,7 +4,7 @@ import grails.gorm.transactions.Transactional
 import groovy.sql.Sql
 
 @Transactional
-class CredService {
+class AuthService {
 
     def dataSource
 
@@ -27,6 +27,4 @@ class CredService {
         }
 
     }
-
-
 }
