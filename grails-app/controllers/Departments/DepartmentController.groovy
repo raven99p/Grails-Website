@@ -2,6 +2,7 @@ package Departments
 
 class DepartmentController {
     def deptService
+    def empService
 
     def showDepartments() {
         def allDepartments = deptService.getAllDepartments()
@@ -27,7 +28,15 @@ class DepartmentController {
     }
 
     def deleteDept() {
-        deptService.deleteDept(params)
-        redirect(action: 'showDepartments')
+        def employeesInDepartment = empService.getEmpByDept(params.departmentId)
+        if (employeesInDepartment) {
+            flash.message = "Δεν μπορεί να διαγραφεί, λόγο ενεργών υπαλλήλων"
+            redirect(action: 'showDepartments')
+        }
+        else{
+            deptService.deleteDept(params)
+            redirect(action: 'showDepartments')
+        }
+
     }
 }

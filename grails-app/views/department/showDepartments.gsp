@@ -23,7 +23,9 @@
 
 <div class="container" style="width: 650px;">
     <h2>Τμήματα</h2>
-
+    <g:if test="${flash.message}">
+        <div class="message" style="display: block">${flash.message}</div>
+    </g:if>
     <table class="table">
         <thead>
         <tr>
