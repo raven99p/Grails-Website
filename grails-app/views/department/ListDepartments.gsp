@@ -34,21 +34,21 @@
         </tr>
         </thead>
         <tbody>
-        <g:each var="department" in="${res}">
+        <g:each var="department" in="${allDepartments}">
             <tr>
-                <th scope="row">${department.id}</th>
-                <th scope="row">${department.d_name}</th>
+                <th scope="row">${department.departmentId}</th>
+                <th scope="row">${department.departmentName}</th>
                 <td>
-                    <g:link controller="employee" action="showEmployees" params="[dept_id: department.id]">
+                    <g:link controller="employee" action="showEmployees" params="[departmentId: department.departmentId]">
                         <button type="button" class="btn btn-primary">Προβολή</button>
                     </g:link>
 
                     <g:link controller="Department" action="updateDeptForm"
-                            params="[d_id: department.id, d_name: department.d_name]">
+                            params="[departmentId: department.departmentId, departmentName: department.departmentName]">
                         <button type="button" class="btn btn-primary">Διαχείρηση</button>
                     </g:link>
 
-                    <g:link controller="Department" action="deleteDept" params="[d_id: department.id]">
+                    <g:link controller="Department" action="deleteDept" params="[departmentId: department.departmentId]">
                         <button type="button" class="btn btn-primary">Διαγραφή</button>
                     </g:link>
                 </td>

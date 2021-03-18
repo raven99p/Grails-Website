@@ -10,7 +10,7 @@ class LogRegController {
     def varif() {
 
         if (request.method == 'POST') {
-            def res = credService.getPwdByUser(params)
+            def res = credService.getUserInformation(params)
             if (res) {
                 def nickname = params.username.split('@')
                 session["user"] = nickname[0]

@@ -10,12 +10,12 @@ class DeptService {
     def createDept(params) {
         def sql = new Sql(dataSource)
         try {
-            def resultRows = sql.execute('''
-                                        insert into dept 
-                                            (d_name) 
+            def insertion = sql.execute('''
+                                        insert into departments 
+                                            (departmentName) 
                                             values (?)
-                                        ''', [params.d_name])
-            return resultRows
+                                        ''', [params.departmentName])
+            return insertion
         }
         catch (e) {
             e.printStackTrace();
@@ -25,83 +25,62 @@ class DeptService {
 
     def updateDept(params) {
         def sql = new Sql(dataSource)
-        def d_id = params.dept_id.toInteger()
+        def departmentId = params.departmentId.toInteger()
         try {
-            def res = sql.executeUpdate('''
-                                        update dept 
-                                        set d_name=:d_name 
-                                        where id=:d_id
-                                        ''', [d_name: params.d_name, d_id: d_id])
-            return res
+            def update = sql.execute('''
+                                        update departments 
+                                        set departmentName=:departmentName 
+                                        where departmentId=:departmentId
+                                        returning *
+                                        ''', [departmentName: params.departmentName, departmentId: departmentId])
+            return update
         }
         catch (e) {
             e.printStackTrace();
             return []
         }
-
     }
 
     def deleteDept(params) {
         def sql = new Sql(dataSource)
-        def id_integer = params.d_id.toInteger()
+        def departmentId = params.departmentId.toInteger()
         try {
             sql.execute('''
-                        delete from dept where id=:id
-                        ''', [id: id_integer])
+                        delete from departments where departmentId=:departmentId
+                        ''', [departmentId: departmentId])
             return true
         }
         catch (e) {
             e.printStackTrace();
             return []
-
         }
     }
 
-    def getDeptById(int id) {
+    def getDeptById(int departmentId) {
         def sql = new Sql(dataSource)
         try {
-            def resultRows = sql.firstRow("""
-                                    select * from dept where id=:id
-                                    """, [id: id])
-            return resultRows
+            def department = sql.firstRow("""
+                                    select departmentName from departments where departmentId=:departmentId
+                                    """, [departmentId: departmentId])
+            return department
         }
         catch (e) {
             e.printStackTrace();
             return []
         }
-
     }
 
     def getAllDepartments() {
         def sql = new Sql(dataSource)
         try {
-            def resultRows = sql.rows('''
-                                    select * from dept
+            def allDepartments = sql.rows('''
+                                    select * from departments
                                     ''')
-            return resultRows
+            return allDepartments
         }
         catch (e) {
             e.printStackTrace();
             return []
         }
-
     }
-
-    def getDeptById(id) {
-        def sql = new Sql(dataSource)
-        def d_id = id.toInteger()
-        try {
-            def resultRows = sql.rows('''
-                                    select d_name from dept where id=:id
-                                    ''', [id: d_id])
-            return resultRows.d_name
-        }
-        catch (e) {
-            e.printStackTrace();
-            return []
-        }
-
-    }
-
-
 }

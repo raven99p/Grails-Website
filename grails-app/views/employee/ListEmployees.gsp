@@ -19,7 +19,7 @@
 <body>
 <div class="container" style="width: 900px;">
 
-    <h2>Υπάλληλοι τμήματος : ${allEmployeesInformation.d_name}</h2>
+    <h2>Υπάλληλοι τμήματος : ${allEmployeesInformation.departmentName}</h2>
     <table class="table">
         <thead class="thead-dark">
         <tr>
@@ -32,18 +32,18 @@
         </tr>
         </thead>
         <tbody>
-        <g:each var="employee" in="${allEmployeesInformation.res}">
+        <g:each var="employee" in="${allEmployeesInformation.allEmployeesofDepartment}">
             <tr>
-                <th scope="row">${employee.id}</th>
-                <th scope="row">${employee.first_name}</th>
-                <td>${employee.last_name}</td>
+                <th scope="row">${employee.employeeId}</th>
+                <th>${employee.firstName}</th>
+                <td>${employee.lastName}</td>
                 <td>${employee.afm}</td>
                 <td>${employee.dob}</td>
                 <td>
-                    <g:link controller="employee" action="editEmpId" params="[id: employee.id]">
+                    <g:link controller="employee" action="editEmpId" params="[employeeId: employee.employeeId]">
                         <button type="button" class="btn btn-primary">Διαχείρηση</button>
                     </g:link>
-                    <g:link controller="employee" action="deleteEmployee" params="[id: employee.id, dept_id: allEmployeesInformation.res.dept_id]">
+                    <g:link controller="employee" action="deleteEmployee" params="[employeeId: employee.employeeId, departmentId: employee.departmentId]">
                         <button type="button" class="btn btn-primary">Διαγραφή</button>
                     </g:link>
                 </td>

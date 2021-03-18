@@ -13,10 +13,10 @@ class EmpService {
     def getEmpById(int id) {
         def sql = new Sql(dataSource)
         try {
-            def resultRows = sql.firstRow("""
-                                    select *,to_char(dob, 'DD-MM-YYYY') as dob from employee where id=:id
-                                    """, [id: id])
-            return resultRows
+            def employee = sql.firstRow("""
+                                    select *,to_char(dob, 'DD-MM-YYYY') as dob from employees where employeeId=:employeeId
+                                    """, [employeeId: id])
+            return employee
         }
         catch (e) {
             e.printStackTrace();
@@ -27,22 +27,23 @@ class EmpService {
 
     def updateEmp(params) {
         def sql = new Sql(dataSource)
-        def id = params.id.toInteger()
+        def employeeId = params.employeeId.toInteger()
         def temp = params.dob.split("-")
         def new_date = temp[2] + "-" + temp[1] + "-" + temp[0]
         def dob = Date.valueOf(new_date)
-        def d_id = params.dept_id.toInteger()
+        def departmentId = params.departmentId.toInteger()
         try {
-            def res = sql.executeUpdate('''
-                                        update employee 
-                                        set first_name=:fName,
-                                            last_name=:lName,
+            def update = sql.execute('''
+                                        update employees 
+                                        set firstName=:firstName,
+                                            lastName=:lastName,
                                             afm=:afm, 
                                             dob=:dob, 
-                                            dept_id=:d_id  
-                                        where id=:id
-                                        ''', [fName: params.first_name, lName: params.last_name, afm: params.afm, id: id, dob: dob, d_id: d_id])
-            return res
+                                            departmentId=:departmentId  
+                                        where employeeId=:employeeId
+                                        returning *
+                                        ''', [firstName: params.firstName, lastName: params.lastName, afm: params.afm, employeeId: employeeId, dob: dob, departmentId: departmentId])
+            return update
         }
         catch (e) {
             e.printStackTrace();
@@ -58,14 +59,14 @@ class EmpService {
         def dob = Date.valueOf(new_date)
 
 
-        def dept_id = params.dept_id.toInteger()
+        def departmentId = params.departmentId.toInteger()
         try {
-            def resultRows = sql.execute('''
-                                        insert into employee 
-                                            (first_name,last_name,afm,dob,dept_id) 
+            def insertion = sql.execute('''
+                                        insert into employees 
+                                            (firstName,lastName,afm,dob,departmentId) 
                                             values (?, ?, ?, ?, ?)
-                                        ''', [params.first_name, params.last_name, params.afm, dob, dept_id])
-            return resultRows
+                                        ''', [params.firstName, params.lastName, params.afm, dob, departmentId])
+            return insertion
         }
         catch (e) {
             e.printStackTrace();
@@ -76,11 +77,11 @@ class EmpService {
 
     def deleteEmp(params) {
         def sql = new Sql(dataSource)
-        def id_integer = params.id.toInteger()
+        def employeeId = params.employeeId.toInteger()
         try {
             sql.execute('''
-                        delete from employee where id=:id
-                        ''', [id: id_integer])
+                        delete from employees where employeeId=:employeeId
+                        ''', [employeeId: employeeId])
             return true
         }
         catch (e) {
@@ -92,12 +93,12 @@ class EmpService {
 
     def getEmpByDept(id) {
         def sql = new Sql(dataSource)
-        def D_id = id.toInteger()
+        def departmentId = id.toInteger()
         try {
-            def resultRows = sql.rows('''
-                                    select *,to_char(dob, 'DD-MM-YYYY') as dob from employee where dept_id=:D_id
-                                    ''', [D_id: D_id])
-            return resultRows
+            def employeesByDepartment = sql.rows('''
+                                    select *,to_char(dob, 'DD-MM-YYYY') as dob from employees where departmentId=:departmentId
+                                    ''', [departmentId: departmentId])
+            return employeesByDepartment
         }
         catch (e) {
             e.printStackTrace();

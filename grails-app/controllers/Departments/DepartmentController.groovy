@@ -4,9 +4,9 @@ class DepartmentController {
     def deptService
 
     def showDepartments() {
-        def res = deptService.getAllDepartments()
-        //[id, d_name]
-        render(view: "ListDepartments", model: [res: res])
+        def allDepartments = deptService.getAllDepartments()
+        //[departmentId,departmentName]
+        render(view: "ListDepartments", model: [allDepartments: allDepartments])
     }
 
     def createDeptForm() {
@@ -19,7 +19,7 @@ class DepartmentController {
     }
 
     def updateDeptForm() {
-        def departmentInformation = [d_id: params.d_id, d_name: params.d_name]
+        def departmentInformation = [departmentId: params.departmentId, departmentName: params.departmentName]
         render(view: "updateDept", model: [departmentInformation:departmentInformation])
     }
 

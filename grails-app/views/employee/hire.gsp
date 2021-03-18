@@ -23,12 +23,12 @@
     <g:form name="loginForm" controller="employee" action="createEmployee">
         <div class="mb-3">
             <label class="form-label">Όνομα</label>
-            <input name="first_name" class="form-control" required="true" maxlength="50"><br/>
+            <input name="firstName" class="form-control" required="true" maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Επώνυμο</label>
-            <input name="last_name" class="form-control" required="true" maxlength="50"><br/>
+            <input name="lastName" class="form-control" required="true" maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
@@ -44,9 +44,9 @@
 
         <div class="mb-3">
             <label class="form-label">Κωδικός τμήματος</label>
-            <select name="dept_id" class="form-select" aria-label="Default select example">
-                <g:each var="department" in="${allDeps}">
-                    <option name="dept_id" value="${department.id}" selected>${department.d_name}</option>
+            <select name="departmentId" class="form-select" aria-label="Default select example">
+                <g:each var="department" in="${allDepartments}">
+                    <option name="departmentId" value="${department.departmentId}" selected>${department.departmentName}</option>
                 </g:each>
             </select>
         </div>

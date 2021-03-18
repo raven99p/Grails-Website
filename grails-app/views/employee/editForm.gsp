@@ -22,38 +22,38 @@
     <g:form name="loginForm" controller="Employee" action="updateEmployeeForm">
         <div class="mb-3">
             <label class="form-label">Κωδικός αριθμός</label>
-            <input name="id" class="form-control" required="true" value=${employeeInformation.res.id} readonly><br/>
+            <input name="employeeId" class="form-control" required="true" value=${TotalInformation.employeeInformation.employeeId} readonly><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Όνομα</label>
-            <input name="first_name" class="form-control" required="true"
-                   value=${employeeInformation.res.first_name} maxlength="50"><br/>
+            <input name="firstName" class="form-control" required="true"
+                   value=${TotalInformation.employeeInformation.firstName} maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Επώνυμο</label>
-            <input name="last_name" class="form-control" required="true" value=${employeeInformation.res.last_name} maxlength="50"><br/>
+            <input name="lastName" class="form-control" required="true" value=${TotalInformation.employeeInformation.lastName} maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">ΑΦΜ</label>
-            <input name="afm" class="form-control" required="true" value=${employeeInformation.res.afm} maxlength="9"><br/>
+            <input name="afm" class="form-control" required="true" value=${TotalInformation.employeeInformation.afm} maxlength="9"><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Ημερομηνία γέννησης</label>
             <input name="dob" class="form-control" required="true"
-                   value=${employeeInformation.res.dob} pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"><br/>
+                   value=${TotalInformation.employeeInformation.dob} pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Κωδικός αριθμός τμήματος</label>
-            <select name="dept_id" class="form-select" aria-label="Default select example">
-                <option name="dept_id" value="${employeeInformation.defaultDepartment.id}"
-                        select="selected">${employeeInformation.defaultDepartment.d_name}</option>
-                <g:each var="department" in="${employeeInformation.allDeps}">
-                    <option name="dept_id" value="${department.id}">${department.d_name}</option>
+            <select name="departmentId" class="form-select" aria-label="Default select example">
+                <option name="departmentId" value="${TotalInformation.employeeInformation.departmentId}"
+                        select="selected">${TotalInformation.defaultDepartment.departmentName}</option>
+                <g:each var="department" in="${TotalInformation.allDepartments}">
+                    <option name="dept_id" value="${department.departmentId}">${department.departmentName}</option>
                 </g:each>
 
             </select>
