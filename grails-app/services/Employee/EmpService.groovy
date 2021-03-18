@@ -13,9 +13,9 @@ class EmpService {
     def getEmpById(int id) {
         def sql = new Sql(dataSource)
         try {
-            def resultRows = sql.rows('''
+            def resultRows = sql.firstRow("""
                                     select *,to_char(dob, 'DD-MM-YYYY') as greekDate from employee where id=:id
-                                    ''', [id: id])
+                                    """, [id: id])
             return resultRows
         }
         catch (e) {
@@ -63,8 +63,8 @@ class EmpService {
             def resultRows = sql.execute('''
                                         insert into employee 
                                             (first_name,last_name,afm,dob,dept_id) 
-                                            values (?,?,?,?,?)
-                                        ''', [params.first_name, params.last_name, params.afm, dob, dept_id])
+                                            values (firstName, lastName, afm, dob, dept_id)
+                                        ''', [firstName:params.first_name, lastName:params.last_name, afm:params.afm, dob:dob, dept_id:dept_id])
             return resultRows
         }
         catch (e) {
