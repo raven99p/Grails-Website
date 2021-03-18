@@ -36,16 +36,19 @@
                     </g:link>
                 </li>
             </ul>
-            <span class="navbar-text" style="float: right">
-                Συνδεδεμένος ως: [${session["user"]}]
-            </span>
-            <g:link controller="authentication" action="logout">
-                <button type="button" class="btn btn-link">αποσύνδεση</button>
-            </g:link>
+
         </div>
+
+        <span class="navbar-text" style="float: right;">
+            Συνδεδεμένος ως: ${session["user"]}
+
+        </span>
+        <g:link controller="authentication" action="logout" style="float: right;">
+            <button type="button" class="btn btn-link">αποσύνδεση</button>
+        </g:link>
+
     </div>
 </nav>
-
 
 </body>
 
