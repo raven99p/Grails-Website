@@ -8,7 +8,7 @@
 * [ ] SQL: catch always with: e.printStackTrace(); to log the error
 * [ ] SQL: return empty lists, not boolean false unless its a boolean query 
 * [ ] SQL: use firstRow for one row returns
-* [ ] Give models one paramets, not [res:res, something:something123] and same names
+* [ ] Give models one parameter, not [res:res, something:something123] and same names
 * [ ] Delete all files with no use
 * [ ] Name the views according to actions, so you dont have to render views
 * [ ] Implement alerts and delete confirmations
