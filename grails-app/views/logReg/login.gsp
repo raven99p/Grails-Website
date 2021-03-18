@@ -50,7 +50,9 @@
             <label for="exampleInputEmail1" class="form-label">Username</label>
             <input type="email" name="username" class="form-control" id="exampleInputEmail1"
                    aria-describedby="emailHelp" required="true" maxlength="50"><br/>
-
+            <g:if test="${flash.message}">
+                <div class="message" style="display: block">${flash.message}</div>
+            </g:if>
             <div id="emailHelp" class="form-text">Να θυμάστε πως ποτέ δεν θα σας ζητηθεί ο κωδικός.</div>
         </div>
 

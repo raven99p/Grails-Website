@@ -16,7 +16,7 @@ class LogRegController {
                 session["user"] = nickname[0]
                 redirect(controller: 'general', action: 'showDepartments')
             } else {
-                flash.message = "User not found"
+                flash.message = "Ελέγξτε τα στοιχεία που εισάγατε"
                 redirect(controller: 'logReg')
             }
         }
