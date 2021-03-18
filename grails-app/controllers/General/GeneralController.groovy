@@ -4,7 +4,7 @@ class GeneralController {
     def genService
 
     def showDepartments() {
-        def res = genService.getDept()
+        def res = genService.getDept() 
         //[id, d_name]
         render(view: "ListDepartments", model: [res: res])
     }
