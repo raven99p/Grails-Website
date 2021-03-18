@@ -19,7 +19,7 @@ class DeptService {
         }
         catch (e) {
             e.printStackTrace();
-            return "Failed: Department create"
+            return []
         }
     }
 
@@ -36,7 +36,7 @@ class DeptService {
         }
         catch (e) {
             e.printStackTrace();
-            return "Failed: Department update"
+            return []
         }
 
     }
@@ -52,7 +52,7 @@ class DeptService {
         }
         catch (e) {
             e.printStackTrace();
-            return "Failed: Department delete"
+            return []
 
         }
     }
@@ -67,7 +67,7 @@ class DeptService {
         }
         catch (e) {
             e.printStackTrace();
-            return false
+            return []
         }
 
     }

@@ -17,7 +17,7 @@ class GenService {
         }
         catch (e) {
             e.printStackTrace();
-            return false
+            return []
         }
 
     }
@@ -33,7 +33,7 @@ class GenService {
         }
         catch (e) {
             e.printStackTrace();
-            return false
+            return []
         }
 
     }
@@ -49,7 +49,7 @@ class GenService {
         }
         catch (e) {
             e.printStackTrace();
-            return false
+            return []
         }
 
     }
