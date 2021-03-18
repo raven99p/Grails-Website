@@ -8,10 +8,10 @@ class EmployeeController {
         def allEmployeesofDepartment = empService.getEmpByDept(departmentId)
         def departmentName = deptService.getDeptById(departmentId)
         def allEmployeesInformation = [allEmployeesofDepartment: allEmployeesofDepartment, departmentName: departmentName[0]]
-        render(view: "ListEmployees", model: [allEmployeesInformation:allEmployeesInformation])
+        [allEmployeesInformation: allEmployeesInformation]
     }
 
-    def editEmpId(int employeeId) {
+    def editEmployee(int employeeId) {
         def employeeInformation = empService.getEmpById(employeeId)
         def allDepartments = deptService.getAllDepartments()
         if (!employeeInformation) {
@@ -20,7 +20,7 @@ class EmployeeController {
         }
         def defaultDepartment = deptService.getDeptById(employeeInformation.departmentId)
         def TotalInformation = [employeeInformation: employeeInformation, allDepartments: allDepartments, defaultDepartment: defaultDepartment]
-        render(view: "editForm", model: [TotalInformation:TotalInformation])
+        [TotalInformation: TotalInformation]
     }
 
     def updateEmployeeForm() {
@@ -30,7 +30,7 @@ class EmployeeController {
 
     def createEmployeeForm() {
         def allDepartments = deptService.getAllDepartments()
-        render(view: "hire", model: [allDepartments: allDepartments])
+        [allDepartments: allDepartments]
     }
 
     def createEmployee() {

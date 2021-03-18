@@ -22,7 +22,8 @@
     <g:form name="loginForm" controller="Employee" action="updateEmployeeForm">
         <div class="mb-3">
             <label class="form-label">Κωδικός αριθμός</label>
-            <input name="employeeId" class="form-control" required="true" value=${TotalInformation.employeeInformation.employeeId} readonly><br/>
+            <input name="employeeId" class="form-control" required="true"
+                   value=${TotalInformation.employeeInformation.employeeId} readonly><br/>
         </div>
 
         <div class="mb-3">
@@ -33,12 +34,14 @@
 
         <div class="mb-3">
             <label class="form-label">Επώνυμο</label>
-            <input name="lastName" class="form-control" required="true" value=${TotalInformation.employeeInformation.lastName} maxlength="50"><br/>
+            <input name="lastName" class="form-control" required="true"
+                   value=${TotalInformation.employeeInformation.lastName} maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">ΑΦΜ</label>
-            <input name="afm" class="form-control" required="true" value=${TotalInformation.employeeInformation.afm} maxlength="9"><br/>
+            <input name="afm" class="form-control" required="true"
+                   value=${TotalInformation.employeeInformation.afm} maxlength="9"><br/>
         </div>
 
         <div class="mb-3">

@@ -3,12 +3,10 @@ package LoginC
 class LogRegController {
     def credService
 
-    def index() {
-        render(view: "login")
+    def login() {
     }
 
     def varif() {
-
         if (request.method == 'POST') {
             def res = credService.getUserInformation(params)
             if (res) {
@@ -16,15 +14,15 @@ class LogRegController {
                 session["user"] = nickname[0]
                 redirect(controller: 'department', action: 'showDepartments')
             } else {
-                flash.message = "Ελέγξτε τα στοιχεία που εισάγατε"
-                redirect(controller: 'logReg')
+                flash.message = "Τα στοιχεία που εισάγατε είναι λάθος"
+                redirect(controller: 'logReg', action: 'login')
             }
         }
     }
 
     def logout() {
         session.invalidate()
-        redirect(controller: 'logReg')
+        redirect(controller: 'logReg', action: 'login')
     }
 
 }

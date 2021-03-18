@@ -24,12 +24,14 @@
     <g:form name="CreateDeptForm" controller="Department" action="updateDept">
         <div class="mb-3">
             <label class="form-label">Κωδικός αριθμός</label>
-            <input name="departmentId" class="form-control" required="true" value=${departmentInformation.departmentId} readonly><br/>
+            <input name="departmentId" class="form-control" required="true"
+                   value=${departmentInformation.departmentId} readonly><br/>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Όνομα</label>
-            <input name="departmentName" class="form-control" required="true" value=${departmentInformation.departmentName} maxlength="10"><br/>
+            <input name="departmentName" class="form-control" required="true"
+                   value=${departmentInformation.departmentName} maxlength="10"><br/>
         </div>
 
         <g:actionSubmit type="button" class="btn btn-primary" value="Αποθήκευση" action="updateDept"/>

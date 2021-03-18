@@ -5,12 +5,10 @@ class DepartmentController {
 
     def showDepartments() {
         def allDepartments = deptService.getAllDepartments()
-        //[departmentId,departmentName]
-        render(view: "ListDepartments", model: [allDepartments: allDepartments])
+        [allDepartments: allDepartments]
     }
 
     def createDeptForm() {
-        render(view: "buildDept")
     }
 
     def createDept() {
@@ -20,7 +18,7 @@ class DepartmentController {
 
     def updateDeptForm() {
         def departmentInformation = [departmentId: params.departmentId, departmentName: params.departmentName]
-        render(view: "updateDept", model: [departmentInformation:departmentInformation])
+        [departmentInformation: departmentInformation]
     }
 
     def updateDept() {

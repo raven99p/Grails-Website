@@ -8,7 +8,7 @@
 <html>
 <!-- Latest compiled and minified CSS -->
 
-    <asset:stylesheet src="bootstrap.min.css"/>
+<asset:stylesheet src="bootstrap.min.css"/>
 
 
 

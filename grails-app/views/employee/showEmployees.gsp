@@ -2,53 +2,49 @@
   Created by IntelliJ IDEA.
   User: paulinho ellul
   Date: 8/3/2021
-  Time: 3:02 μ.μ.
+  Time: 4:30 μ.μ.
 --%>
 
-<!doctype html>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <!-- Latest compiled and minified CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-
-
-
 <head>
-    <title>τμήματα</title>
+    <title>Υπάλληλοι</title>
     <g:render template="/shared/navbar"/>
-
 </head>
 
 <body>
+<div class="container" style="width: 900px;">
 
-<div class="container" style="width: 650px;">
-    <h2>Τμήματα</h2>
-
+    <h2>Υπάλληλοι τμήματος : ${allEmployeesInformation.departmentName}</h2>
     <table class="table">
         <thead class="thead-dark">
         <tr>
             <th scope="col">Κωδικός αριθμός</th>
             <th scope="col">Όνομα</th>
+            <th scope="col">Επώνυμο</th>
+            <th scope="col">ΑΦΜ</th>
+            <th scope="col">Ημερομηνία γέννησης</th>
             <th scope="col">Επιλογές</th>
         </tr>
         </thead>
         <tbody>
-        <g:each var="department" in="${allDepartments}">
+        <g:each var="employee" in="${allEmployeesInformation.allEmployeesofDepartment}">
             <tr>
-                <th scope="row">${department.departmentId}</th>
-                <th scope="row">${department.departmentName}</th>
+                <th scope="row">${employee.employeeId}</th>
+                <th>${employee.firstName}</th>
+                <td>${employee.lastName}</td>
+                <td>${employee.afm}</td>
+                <td>${employee.dob}</td>
                 <td>
-                    <g:link controller="employee" action="showEmployees" params="[departmentId: department.departmentId]">
-                        <button type="button" class="btn btn-primary">Προβολή</button>
-                    </g:link>
-
-                    <g:link controller="Department" action="updateDeptForm"
-                            params="[departmentId: department.departmentId, departmentName: department.departmentName]">
+                    <g:link controller="employee" action="editEmployee" params="[employeeId: employee.employeeId]">
                         <button type="button" class="btn btn-primary">Διαχείρηση</button>
                     </g:link>
-
-                    <g:link controller="Department" action="deleteDept" params="[departmentId: department.departmentId]">
+                    <g:link controller="employee" action="deleteEmployee"
+                            params="[employeeId: employee.employeeId, departmentId: employee.departmentId]">
                         <button type="button" class="btn btn-primary">Διαγραφή</button>
                     </g:link>
                 </td>
@@ -56,18 +52,9 @@
         </g:each>
         </tbody>
     </table>
-
-
-
-
-    <!--
-    <g:link controller="Employee" action="createEmployeeForm" id="create_Employee">
-        <button type="button" class="btn btn-primary">Create new employee</button>
+    <g:link controller="department" action="showDepartments">
+        <button type="button" class="btn btn-primary">Πίσω</button>
     </g:link>
-    <g:link controller="Department" action="createDeptForm">
-        <button type="button" class="btn btn-primary">Create new department</button>
-    </g:link>
-    -->
 
 </div>
 <g:render template="/shared/footer"/>

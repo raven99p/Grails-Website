@@ -46,7 +46,8 @@
             <label class="form-label">Κωδικός τμήματος</label>
             <select name="departmentId" class="form-select" aria-label="Default select example">
                 <g:each var="department" in="${allDepartments}">
-                    <option name="departmentId" value="${department.departmentId}" selected>${department.departmentName}</option>
+                    <option name="departmentId" value="${department.departmentId}"
+                            selected>${department.departmentName}</option>
                 </g:each>
             </select>
         </div>
