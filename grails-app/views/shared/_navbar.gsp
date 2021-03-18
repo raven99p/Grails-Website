@@ -4,8 +4,10 @@
   Date: 12/3/2021
   Time: 2:33 μ.μ.
 --%>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+<asset:stylesheet src="bootstrap.min.css"/>
+
+
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
@@ -34,15 +36,16 @@
                     </g:link>
                 </li>
             </ul>
-            <span class="navbar-text">
+            <span class="navbar-text" style="float: right">
                 Συνδεδεμένος ως: [${session["user"]}]
             </span>
-            <g:link controller="logReg" action="logout">
+            <g:link controller="authentication" action="logout">
                 <button type="button" class="btn btn-link">αποσύνδεση</button>
             </g:link>
         </div>
     </div>
 </nav>
+
 
 </body>
 

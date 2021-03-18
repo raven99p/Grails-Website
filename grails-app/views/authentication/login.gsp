@@ -45,7 +45,7 @@
 <body>
 <div class="container" style="width: 500px;">
     <h2>Είσοδος</h2>
-    <g:form name="loginForm" controller="logReg" action="varif">
+    <g:form name="loginForm" controller="authentication" action="varify">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Username</label>
             <input type="email" name="username" class="form-control" id="exampleInputEmail1"
@@ -62,7 +62,7 @@
                    maxlength="50"><br/>
         </div>
 
-        <g:actionSubmit type="button" class="btn btn-primary" value="Είσοδος" action="varif"/>
+        <g:actionSubmit type="button" class="btn btn-primary" value="Είσοδος" action="varify"/>
 
     </g:form>
 </div>
