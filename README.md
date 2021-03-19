@@ -5,36 +5,36 @@
 
 A department - employee administrator website on grails. It contains two main screens, a department and a employee table where you can execute crud actions. This project was part of my basic training in a software development company.
 
-# Demo #
+## Demo 
 
-## Authentication screen ##
+### Authentication screen ###
 
 
 ![GitHub Logo](/images/Login.jpg)
 
 
-## Departments ##
+### Departments ###
 
 ![GitHub Logo](/images/Departments.jpg)
 
 
-## Create Department ##
+### Create Department ###
 
 ![GitHub Logo](/images/CreateDepartment.jpg)
 
 
-## Edit Department ##
+### Edit Department ###
 
 ![GitHub Logo](/images/EditDepartment.jpg)
 
 
-## Employees ##
+### Employees ###
 
 ![GitHub Logo](/images/Employees.jpg)
 
 
 
-## Create Employees ##
+### Create Employees ###
 
 ![GitHub Logo](/images/CreateEmployee.jpg)
 
@@ -60,7 +60,7 @@ All the CSS was implemented with Bootstrap plus some small additions of mine.
 
 ## Problems I faced.
 
-The hardest part for me was learning and understanding Grails. Grails is based on three mains concepts, Controllers, Services and views which you need to understand well in order to build an acceptable website. Something else that troubled me was the setup of the postgres database with the grails project and the installation of postgreSQL driver.
+The hardest part for me was learning and understanding Grails. Grails is based on three mains concepts, Controllers, Services and views which you need to understand well in order to build an acceptable website. Something else that troubled me was the setup of the postgreSQL database with the grails project and the installation of postgreSQL driver.
 
 # Checklist for better and cleaner code.
 
