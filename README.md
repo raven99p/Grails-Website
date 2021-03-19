@@ -5,9 +5,7 @@
 
 A department - employee administrator website on grails. It contains two main screens, a department and a employee table where you can execute crud actions. This project was part of my basic training in a software development company.
 
-<h2 >Demo/h2>
-
-# Website Screens #
+# Demo #
 
 ## Authentication screen ##
 
