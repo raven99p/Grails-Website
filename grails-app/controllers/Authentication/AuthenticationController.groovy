@@ -9,9 +9,9 @@ class AuthenticationController {
 
     def varify() {
         if (request.method == 'POST') {
-            def res = authService.getUserInformation(params)
+            def userFound = authService.getUserInformation(params)
 
-            if (res) {
+            if (userFound) {
                 def nickname = params.username.split('@')
                 session["user"] = nickname[0]
                 redirect(controller: 'department', action: 'showDepartments')
