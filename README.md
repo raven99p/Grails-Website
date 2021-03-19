@@ -40,7 +40,7 @@ A department - employee administrator website on grails. It contains two main sc
 
 
 
-## Edit Employees ##
+### Edit Employees ###
 
 ![GitHub Logo](/images/EditEmployee.jpg)
 
