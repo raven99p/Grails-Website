@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<div class="container" style="width: 900px;">
+<div class="container" style="width: 1000px;">
 
     <h2>Υπάλληλοι τμήματος : ${allEmployeesInformation.departmentName}</h2>
     <table class="table">
