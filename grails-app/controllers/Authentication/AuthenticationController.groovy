@@ -1,6 +1,6 @@
 package Authentication
 
-class AuthenticationController { //sfddsf
+class AuthenticationController {
 
     def authService
 
