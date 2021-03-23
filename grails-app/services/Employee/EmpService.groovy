@@ -64,7 +64,9 @@ class EmpService {
             def insertion = sql.execute("""
                                         insert into employees 
                                             (firstName,lastName,afm,dob,departmentId) 
-                                            values (${params.firstName},  ${params.lastName}, ${params.afm}, ${dob}, ${departmentId}) """)
+                                            values (${params.firstName},  ${params.lastName}, ${params.afm}, ${dob}, ${departmentId}) 
+                                            returning *
+                                         """)
             return insertion
         }
         catch (e) {
@@ -80,6 +82,7 @@ class EmpService {
         try {
             sql.execute('''
                         delete from employees where employeeId=:employeeId
+                        returning *
                         ''', [employeeId: employeeId])
             return true
         }
