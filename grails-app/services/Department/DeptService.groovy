@@ -15,6 +15,7 @@ class DeptService {
                                         insert into departments 
                                             (departmentName) 
                                             values (${departmentName})
+                                            returning *
                                         """)
             return insertion
         }
