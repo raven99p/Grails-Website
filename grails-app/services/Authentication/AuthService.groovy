@@ -15,11 +15,17 @@ class AuthService {
             def credentials = sql.firstRow("""
                                     select password, isActive from users where username=:username
                                     """, [username: params.username])
-            if (params.password.toString() == credentials.password && credentials.isActive == true) {
-                return true
-            } else {
+            if (credentials!=null){
+                if (params.password.toString() == credentials.password && credentials.isActive == true) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            else{
                 return false
             }
+
         }
         catch (e) {
             e.printStackTrace();
