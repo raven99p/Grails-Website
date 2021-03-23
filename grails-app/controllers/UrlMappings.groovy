@@ -13,8 +13,8 @@ class UrlMappings {
         get "/authenticationResponder/varify(.$format)"(controller:'authenticationResponder', action: 'varify')
 
         post "/departmentResponder/postDepartment(.$format)"(controller: 'departmentResponder', action:'postDepartment')
-
-
+        put "/departmentResponder/updateDepartment(.$format)"(controller: 'departmentResponder', action: 'updateDepartment')
+        delete "/departmentResponder/deleteDepartment(.$format)"(controller: 'departmentResponder', action: 'deleteDepartment')
         "500"(view: '/error')
         "404"(view: '/notFound')
 
