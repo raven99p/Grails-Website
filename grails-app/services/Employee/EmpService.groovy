@@ -14,7 +14,13 @@ class EmpService {
         def sql = new Sql(dataSource)
         try {
             def employee = sql.firstRow("""
-                                    select *,to_char(dob, 'DD-MM-YYYY') as dob from employees where employeeId=:employeeId
+                                    select employeeId,
+                                           lastName,
+                                           firstName,
+                                           afm,
+                                           to_char(dob, 'DD-MM-YYYY') as dob,
+                                           departmentId
+                                    from employees where employeeId=:employeeId
                                     """, [employeeId: id])
             return employee
         }
@@ -98,7 +104,13 @@ class EmpService {
         def departmentId = id.toInteger()
         try {
             def employeesByDepartment = sql.rows('''
-                                    select *,to_char(dob, 'DD-MM-YYYY') as dob from employees where departmentId=:departmentId
+                                    select employeeId,
+                                           firstName,
+                                           lastName,
+                                           afm,
+                                           to_char(dob, 'DD-MM-YYYY') as dob,
+                                            departmentId
+                                    from employees where departmentId=:departmentId
                                     ''', [departmentId: departmentId])
             return employeesByDepartment
         }
