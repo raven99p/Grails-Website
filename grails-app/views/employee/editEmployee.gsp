@@ -20,38 +20,38 @@
     <h2>Φόρμα Αλλαγής στοιχείων</h2>
     <g:form name="loginForm" controller="Employee" action="updateEmployeeForm">
         <div class="mb-3">
-            <label class="form-label">Κωδικός αριθμός</label>
-            <input name="employeeId" class="form-control" required="true"
+            <label class="form-label" for="employeeId" >Κωδικός αριθμός</label>
+            <input id ="employeeId" name="employeeId" class="form-control" required="true"
                    value=${TotalInformation.employeeInformation.employeeId} readonly><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Όνομα</label>
-            <input name="firstName" class="form-control" required="true"
+            <label class="form-label" for="firstName">Όνομα</label>
+            <input id="firstName" name="firstName" class="form-control" required="true"
                    value=${TotalInformation.employeeInformation.firstName} maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Επώνυμο</label>
-            <input name="lastName" class="form-control" required="true"
+            <label class="form-label" for="lastName">Επώνυμο</label>
+            <input id="lastName" name="lastName" class="form-control" required="true"
                    value=${TotalInformation.employeeInformation.lastName} maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">ΑΦΜ</label>
-            <input name="afm" class="form-control" required="true"
+            <label class="form-label" for="afm">ΑΦΜ</label>
+            <input id="afm" name="afm" class="form-control" required="true"
                    value=${TotalInformation.employeeInformation.afm} maxlength="9"><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Ημερομηνία γέννησης</label>
-            <input name="dob" class="form-control" required="true"
+            <label class="form-label" for="dob">Ημερομηνία γέννησης</label>
+            <input id="dob" name="dob" class="form-control" required="true"
                    value=${TotalInformation.employeeInformation.dob} pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Κωδικός αριθμός τμήματος</label>
-            <select name="departmentId" class="form-select" aria-label="Default select example">
+            <label class="form-label" for="departmentId">Κωδικός αριθμός τμήματος</label>
+            <select id="departmentId" name="departmentId" class="form-select" aria-label="Default select example">
                 <option name="departmentId" value="${TotalInformation.employeeInformation.departmentId}"
                         select="selected">${TotalInformation.defaultDepartment.departmentName}</option>
                 <g:each var="department" in="${TotalInformation.allDepartments}">

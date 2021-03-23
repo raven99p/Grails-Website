@@ -15,7 +15,6 @@
     <title>Υπάλληλοι</title>
     <g:render template="/shared/navbar"/>
 </head>
-
 <body>
 <div class="container" style="width: 1000px;">
 

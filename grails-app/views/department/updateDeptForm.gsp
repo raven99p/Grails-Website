@@ -22,14 +22,14 @@
     <h2>Φόρμα αλλαγής στοιχείων</h2>
     <g:form name="CreateDeptForm" controller="Department" action="updateDept">
         <div class="mb-3">
-            <label class="form-label">Κωδικός αριθμός</label>
-            <input name="departmentId" class="form-control" required="true"
+            <label class="form-label" for="departmentId">Κωδικός αριθμός</label>
+            <input id="departmentId" name="departmentId" class="form-control" required="true"
                    value=${departmentInformation.departmentId} readonly><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Όνομα</label>
-            <input name="departmentName" class="form-control" required="true"
+            <label class="form-label" for="departmentName">Όνομα</label>
+            <input id="departmentName" name="departmentName" class="form-control" required="true"
                    value=${departmentInformation.departmentName} maxlength="10"><br/>
         </div>
 

@@ -21,8 +21,8 @@
     <h2>Φόρμα δημιουργίας τμήματος</h2>
     <g:form name="CreateDeptForm" controller="Department" action="createDept">
         <div class="mb-3">
-            <label class="form-label">Όνομα</label>
-            <input name="departmentName" class="form-control" required="true" maxlength="10"><br/>
+            <label class="form-label" for="deaprtmentName">Όνομα</label>
+            <input id="deaprtmentName" name="departmentName" class="form-control" required="true" maxlength="10"><br/>
         </div>
 
         <g:actionSubmit type="button" class="btn btn-primary" value="Create" action="createDept"/>

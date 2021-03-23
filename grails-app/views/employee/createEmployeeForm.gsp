@@ -21,29 +21,29 @@
     <h2>Φόρμα Πρόσληψης</h2>
     <g:form name="loginForm" controller="employee" action="createEmployee">
         <div class="mb-3">
-            <label class="form-label">Όνομα</label>
-            <input name="firstName" class="form-control" required="true" maxlength="50"><br/>
+            <label class="form-label" for="firstName">Όνομα</label>
+            <input id="firstName" name="firstName" class="form-control" required="true" maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Επώνυμο</label>
-            <input name="lastName" class="form-control" required="true" maxlength="50"><br/>
+            <label class="form-label" for="lastName">Επώνυμο</label>
+            <input id="lastName" name="lastName" class="form-control" required="true" maxlength="50"><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">ΑΦΜ</label>
-            <input name="afm" class="form-control" required="true" maxlength="9"><br/>
+            <label class="form-label" for="afm">ΑΦΜ</label>
+            <input id="afm" name="afm" class="form-control" required="true" maxlength="9"><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Ημερομηνία γέννησης</label>
-            <input name="dob" class="form-control" required="true" placeholder="DD-MM-YYYY"
+            <label class="form-label" for="dob">Ημερομηνία γέννησης</label>
+            <input id="dob" name="dob" class="form-control" required="true" placeholder="DD-MM-YYYY"
                    pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"><br/>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Κωδικός τμήματος</label>
-            <select name="departmentId" class="form-select" aria-label="Default select example">
+            <label class="form-label" for="departmentId">Κωδικός τμήματος</label>
+            <select id="departmentId" name="departmentId" class="form-select" aria-label="Default select example">
                 <g:each var="department" in="${allDepartments}">
                     <option name="departmentId" value="${department.departmentId}"
                             selected>${department.departmentName}</option>
