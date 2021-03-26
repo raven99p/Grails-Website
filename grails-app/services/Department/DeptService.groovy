@@ -62,7 +62,7 @@ class DeptService {
         def sql = new Sql(dataSource)
         try {
             def department = sql.firstRow("""
-                                    select departmentName from departments where departmentId=:departmentId
+                                    select * from departments where departmentId=:departmentId
                                     """, [departmentId: departmentId])
             return department
         }

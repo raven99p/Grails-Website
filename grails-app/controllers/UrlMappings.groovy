@@ -7,7 +7,7 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-        get "/authenticationResponder/verify(.$format)"(controller:'authenticationResponder', action: 'verify')
+        post "/authenticationResponder/verify(.$format)"(controller:'authenticationResponder', action: 'verify')
         get "/authenticationResponder/logout(.$format)"(controller:'authenticationResponder', action: 'logout')
 
 
@@ -15,6 +15,7 @@ class UrlMappings {
         post "/departmentResponder/postDepartment(.$format)"(controller: 'departmentResponder', action:'postDepartment')
         put "/departmentResponder/updateDepartment(.$format)"(controller: 'departmentResponder', action: 'updateDepartment')
         delete "/departmentResponder/deleteDepartment(.$format)"(controller: 'departmentResponder', action: 'deleteDepartment')
+        get "/departmentResponder/updateDepartmentForm/(.$format)"(controller: 'departmentResponder', action: 'updateDepartmentForm' )
 
         get "/employeeResponder/getEmployees/(.$format)"(controller: 'employeeResponder', action: 'getEmployees')
         post "/employeeResponder/postEmployee(.$format)"(controller: 'employeeResponder', action: 'postEmployees')

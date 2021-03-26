@@ -6,7 +6,7 @@ class EmployeeResponderController {
     def deptService
 
     def getEmployees() { //http://localhost:8080/employeeResponder/getEmployees/9.json
-        def departmentId = request.getJSON().departmentId.toInteger()
+        def departmentId = params["id"].toInteger()
         def allEmployeesofDepartment = empService.getEmpByDept(departmentId)
         def departmentName = deptService.getDeptById(departmentId)
         def message = [allEmployeesofDepartment:allEmployeesofDepartment, departmentName:departmentName]
