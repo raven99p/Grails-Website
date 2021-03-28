@@ -21,7 +21,7 @@ class UrlMappings {
         post "/employeeResponder/postEmployee(.$format)"(controller: 'employeeResponder', action: 'postEmployees')
         put "/employeeResponder/updateEmployee(.$format)"(controller: 'employeeResponder', action: 'updateEmployee')
         delete "/employeeResponder/deleteEmployee(.$format)"(controller: 'employeeResponder', action: 'deleteEmployee')
-
+        get "/employeeResponder/updateEmployeeForm(.$format)"(controller: 'employeeResponder', action: 'updateEmployeeForm')
 
         "500"(view: '/error')
         "404"(view: '/notFound')
