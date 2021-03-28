@@ -29,4 +29,29 @@ class EmployeeResponderService {
             return 'Failed: create employee'
         }
     }
+
+    def updateEmp(params) {
+        def sql = new Sql(dataSource)
+        def employeeId = params.employeeId.toInteger()
+        def smallDate =  params.dob.substring(0,10)
+        def dob = Date.valueOf(smallDate)
+        def departmentId = params.departmentId.toInteger()
+        try {
+            def update = sql.execute('''
+                                        update employees 
+                                        set firstName=:firstName,
+                                            lastName=:lastName,
+                                            afm=:afm, 
+                                            dob=:dob, 
+                                            departmentId=:departmentId  
+                                        where employeeId=:employeeId
+                                        returning *
+                                        ''', [firstName: params.firstName, lastName: params.lastName, afm: params.afm, employeeId: employeeId, dob: dob, departmentId: departmentId])
+            return update
+        }
+        catch (e) {
+            e.printStackTrace();
+            return []
+        }
+    }
 }
