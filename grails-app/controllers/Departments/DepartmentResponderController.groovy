@@ -27,6 +27,11 @@ class DepartmentResponderController {
 
     def deleteDepartment() { //http://localhost:8080/departmentResponder/deleteDepartment.json
         def requestBodyDepartmentId = request.getJSON()
-        respond(status: 200, responseMessage: deptService.deleteDept(requestBodyDepartmentId))
+        if (deptService.deleteDept(requestBodyDepartmentId)) {
+            respond(status: 200, responseMessage: 'Successful deletion')
+        } else {
+            respond(status: 400, responseMessage: 'Failed deletion')
+        }
+
     }
 }

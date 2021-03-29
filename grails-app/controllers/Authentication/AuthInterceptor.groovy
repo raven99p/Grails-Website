@@ -2,7 +2,11 @@ package Authentication
 
 class AuthInterceptor {
     AuthInterceptor() {
-        //matchAll().excludes(controller: 'authentication').excludes(controller: 'authenticationResponder')
+        matchAll().excludes(controller: 'authentication')
+                .excludes(controller: 'authenticationResponder')
+                .excludes(controller: 'employeeResponder')
+                .excludes(controller: 'departmentResponder')
+
     }
 
     boolean before() {
@@ -13,3 +17,4 @@ class AuthInterceptor {
         return false
     }
 }
+
