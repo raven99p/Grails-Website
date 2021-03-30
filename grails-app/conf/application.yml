@@ -11,6 +11,9 @@ grails:
     cors:
         enabled: true
         allowCredentials: true
+        allowedOrigins:
+            - http://localhost:3000
+
 
 
 

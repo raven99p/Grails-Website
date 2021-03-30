@@ -2,11 +2,10 @@ package Authentication
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTCreationException;
-import com.auth0.jwt.exceptions.SignatureGenerationException;
-import com.auth0.jwt.impl.ClaimsHolder;
-import com.auth0.jwt.impl.PayloadSerializer;
-import com.auth0.jwt.impl.PublicClaims
+import com.auth0.jwt.exceptions.JWTCreationException
+import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.DecodedJWT
+import com.auth0.jwt.interfaces.JWTVerifier
 
 import javax.servlet.http.Cookie;
 
@@ -18,7 +17,7 @@ class AuthenticationResponderController {
         if (userFound) {
             def nickname = request.getJSON().username.split('@')
             try {
-                Algorithm algorithm = Algorithm.HMAC256('F90C6860-70C1-4B33-BE08-30E160B54CB6');
+                Algorithm algorithm = Algorithm.HMAC256('b6a36302-f106-43e8-8c32-3b4f433d837bccd524f2-baae-45d7-b0e1-d6294dc460da');
                 String token = JWT.create()
                         .withIssuer("auth0")
                         .sign(algorithm);
@@ -26,16 +25,22 @@ class AuthenticationResponderController {
                 cookie.maxAge = 3600
                 cookie.httpOnly = true
                 cookie.setPath("/")
-                response.addCookie(cookie)
 
-                respond(status: 200, formats: responseFormats)
+                JWTVerifier verifier = JWT.require(algorithm)
+                        .withIssuer("auth0")
+                        .build();
+                DecodedJWT jwt = verifier.verify(token);
+
+                response.addCookie(cookie)
+                respond(status: 200, formats: responseFormats, secret: jwt)
             } catch (JWTCreationException exception) {
             }
+
 
             return true
         } else {
             flash.message = "Τα στοιχεία που εισάγατε είναι λάθος"
-            respond status: 400
+            respond (status: 400)
             return false
         }
 
