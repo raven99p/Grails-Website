@@ -25,14 +25,14 @@ class AuthenticationResponderController {
                 cookie.maxAge = 3600
                 cookie.httpOnly = true
                 cookie.setPath("/")
-
+                /*
                 JWTVerifier verifier = JWT.require(algorithm)
                         .withIssuer("auth0")
                         .build();
                 DecodedJWT jwt = verifier.verify(token);
-
+                */
                 response.addCookie(cookie)
-                respond(status: 200, formats: responseFormats, secret: jwt)
+                respond(status: 200, formats: responseFormats)
             } catch (JWTCreationException exception) {
             }
 
