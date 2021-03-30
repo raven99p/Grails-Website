@@ -10,6 +10,7 @@ grails:
             events: false
     cors:
         enabled: true
+        allowCredentials: true
 
 
 
