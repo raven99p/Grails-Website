@@ -22,7 +22,7 @@ class AuthenticationResponderController {
                         .withIssuer("auth0")
                         .sign(algorithm);
                 Cookie cookie = new Cookie("authentication", token)
-                cookie.maxAge = 3600
+                cookie.maxAge = 100000000
                 cookie.httpOnly = true
                 cookie.setPath("/")
                 /*
@@ -31,6 +31,7 @@ class AuthenticationResponderController {
                         .build();
                 DecodedJWT jwt = verifier.verify(token);
                 */
+                session["user"]=nickname[0];
                 response.addCookie(cookie)
                 respond(status: 200, formats: responseFormats)
             } catch (JWTCreationException exception) {
@@ -47,12 +48,17 @@ class AuthenticationResponderController {
     }
 
     def logout() {
+        session.invalidate()
         Cookie cookie = new Cookie("authentication", null); // Not necessary, but saves bandwidth.
         cookie.setPath("/");
         cookie.setHttpOnly(true);
         cookie.setMaxAge(0); // Don't set to -1 or it will become a session cookie!
         response.addCookie(cookie);
         respond(status: 200)
+    }
+
+    def getSessionVariable() {
+        respond (sessionVariable: session["user"])
     }
 
 

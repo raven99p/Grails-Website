@@ -11,7 +11,7 @@ class EmployeeResponderController {
         def allEmployeesofDepartment = empService.getEmpByDept(departmentId)
         def departmentInformation = deptService.getDeptById(departmentId)
         def message = [allEmployeesofDepartment:allEmployeesofDepartment, departmentInformation:departmentInformation]
-        respond (status: 200, messageResponse:message)
+        respond (status: 200, responseMessage:message)
     }
 
     def updateEmployeeForm() {
@@ -24,16 +24,16 @@ class EmployeeResponderController {
 
     def updateEmployee() { //http://localhost:8080/employeeResponder/updateEmployee.json
         def updatedEmployeeInformation= employeeResponderService.updateEmp(request.getJSON())
-        respond (status: 200, messageResponse:updatedEmployeeInformation)
+        respond (status: 200, responseMessage:updatedEmployeeInformation)
     }
 
     def postEmployee() { //http://localhost:8080/employeeResponder/postEmployee.json
         def createdEmployeeInformation = employeeResponderService.createEmployee(request.getJSON())
-        respond (status: 200, messageResponse:createdEmployeeInformation)
+        respond (status: 200, responseMessage:createdEmployeeInformation)
     }
 
     def deleteEmployee() { //http://localhost:8080/employeeResponder/deleteEmployee.json
         def deletedEmployeeInformation = empService.deleteEmp(request.getJSON())
-        respond (status: 200, messageResponse:deletedEmployeeInformation)
+        respond (status: 200, responseMessage:deletedEmployeeInformation)
     }
 }

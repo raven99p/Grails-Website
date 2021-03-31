@@ -9,7 +9,7 @@ class UrlMappings {
         }
         post "/authenticationResponder/verify(.$format)"(controller:'authenticationResponder', action: 'verify')
         get "/authenticationResponder/logout(.$format)"(controller:'authenticationResponder', action: 'logout')
-
+        get "/authenticationResponder/getSessionVariable(.$format)"(controller:'authenticationResponder', action: 'getSessionVariable')
 
         get "/departmentResponder/getDepartments(.$format)"(controller:'departmentResponder', action:'getDepartments')
         post "/departmentResponder/postDepartment(.$format)"(controller: 'departmentResponder', action:'postDepartment')
