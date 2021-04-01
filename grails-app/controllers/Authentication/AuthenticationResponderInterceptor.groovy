@@ -18,7 +18,6 @@ class AuthenticationResponderInterceptor {
     boolean before() {
         Algorithm algorithm = Algorithm.HMAC256('b6a36302-f106-43e8-8c32-3b4f433d837bccd524f2-baae-45d7-b0e1-d6294dc460da');
 
-
         def token = request.cookies.find { it.name == 'authentication' }
         if (token) {
             try {
@@ -27,11 +26,9 @@ class AuthenticationResponderInterceptor {
                         .build();
                 DecodedJWT jwt = verifier.verify(token.value);
                 return true
-            }
-            catch (JWTVerificationException exception) {
+            } catch (JWTVerificationException exception) {
                 return false
             }
-            return true
         }
     }
 }

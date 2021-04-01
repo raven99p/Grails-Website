@@ -12,6 +12,7 @@ import javax.servlet.http.Cookie;
 class AuthenticationResponderController {
     def authService
     static responseFormats = ['json']
+
     def verify() {
         def userFound = authService.getUserInformation(request.getJSON())
         if (userFound) {
@@ -20,18 +21,16 @@ class AuthenticationResponderController {
                 Algorithm algorithm = Algorithm.HMAC256('b6a36302-f106-43e8-8c32-3b4f433d837bccd524f2-baae-45d7-b0e1-d6294dc460da');
                 String token = JWT.create()
                         .withIssuer("auth0")
+                        .withClaim("username", nickname[0])
                         .sign(algorithm);
                 Cookie cookie = new Cookie("authentication", token)
                 cookie.maxAge = 100000000
                 cookie.httpOnly = true
                 cookie.setPath("/")
                 /*
-                JWTVerifier verifier = JWT.require(algorithm)
-                        .withIssuer("auth0")
-                        .build();
-                DecodedJWT jwt = verifier.verify(token);
+
                 */
-                session["user"]=nickname[0];
+                session["user"] = nickname[0];
                 response.addCookie(cookie)
                 respond(status: 200, formats: responseFormats)
             } catch (JWTCreationException exception) {
@@ -41,7 +40,7 @@ class AuthenticationResponderController {
             return true
         } else {
             flash.message = "Τα στοιχεία που εισάγατε είναι λάθος"
-            respond (status: 400)
+            respond(status: 400)
             return false
         }
 
@@ -58,8 +57,17 @@ class AuthenticationResponderController {
     }
 
     def getSessionVariable() {
-        respond (sessionVariable: session["user"])
+
+        Algorithm algorithm = Algorithm.HMAC256('b6a36302-f106-43e8-8c32-3b4f433d837bccd524f2-baae-45d7-b0e1-d6294dc460da');
+        def token = request.cookies.find { it.name == 'authentication' }
+        try {
+            JWTVerifier verifier = JWT.require(algorithm)
+                    .withIssuer("auth0")
+                    .build();
+            DecodedJWT jwt = verifier.verify(token.value);
+            respond(status: 200, sessionVariable: jwt.claims.username.toString())
+        } catch (JWTVerificationException exception) {
+            respond(status: 401, sessionVariable: 'Not found')
+        }
     }
-
-
 }
