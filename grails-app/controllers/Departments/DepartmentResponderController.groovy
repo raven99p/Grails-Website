@@ -7,29 +7,46 @@ class DepartmentResponderController {
 
 
     def getDepartments() { //http://localhost:8080/departmentResponder/getDepartments.json
-        respond(status: 200, responseMessage: deptService.getAllDepartments())
+        try {
+            respond(status: 200, responseMessage: deptService.getAllDepartments())
+        } catch (e) {
+            respond(status: 400, responseMessage: null)
+        }
     }
 
     def postDepartment() { //http://localhost:8080/departmentResponder/postDepartment.json
         def requestBodyDepartmentName = request.getJSON()
-        respond(status: 200, responseMessage: deptService.createDept(requestBodyDepartmentName))
+        try {
+            respond(status: 200, responseMessage: deptService.createDept(requestBodyDepartmentName))
+        } catch (e) {
+            respond(status: 400, responseMessage: null)
+        }
     }
 
     def updateDepartmentForm() {
         def requestBodyDepartmentId = params["id"].toInteger()
-        respond(status: 200, responseMessage: deptService.getDeptById(requestBodyDepartmentId))
+        try {
+            respond(status: 200, responseMessage: deptService.getDeptById(requestBodyDepartmentId))
+        } catch (e) {
+            respond(status: 400, responseMessage: null)
+        }
     }
 
     def updateDepartment() { //http://localhost:8080/departmentResponder/updateDepartment.json
         def requestBodyDepartmentInformation = request.getJSON()
-        respond(status: 200, responseMessage: deptService.updateDept(requestBodyDepartmentInformation))
+        try {
+            respond(status: 200, responseMessage: deptService.updateDept(requestBodyDepartmentInformation))
+        } catch (e) {
+            respond(status: 400, responseMessage: null)
+        }
     }
 
     def deleteDepartment() { //http://localhost:8080/departmentResponder/deleteDepartment.json
         def requestBodyDepartmentId = request.getJSON()
-        if (deptService.deleteDept(requestBodyDepartmentId)) {
+        try {
+            deptService.deleteDept(requestBodyDepartmentId)
             respond(status: 200, responseMessage: 'Successful deletion')
-        } else {
+        } catch (e) {
             respond(status: 400, responseMessage: 'Failed deletion')
         }
 
