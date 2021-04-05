@@ -5,6 +5,7 @@ class EmployeeResponderController {
     def empService
     def deptService
     def employeeResponderService
+    static responseFormats = ['json']
 
     def getEmployees() { //http://localhost:8080/employeeResponder/getEmployees/9.json
         try {

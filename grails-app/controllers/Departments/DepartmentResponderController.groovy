@@ -4,7 +4,7 @@ package Departments
 class DepartmentResponderController {
 
     def deptService
-
+    static responseFormats = ['json']
 
     def getDepartments() { //http://localhost:8080/departmentResponder/getDepartments.json
         try {
@@ -43,10 +43,9 @@ class DepartmentResponderController {
 
     def deleteDepartment() { //http://localhost:8080/departmentResponder/deleteDepartment.json
         def requestBodyDepartmentId = request.getJSON()
-        try {
-            deptService.deleteDept(requestBodyDepartmentId)
+        if(deptService.deleteDept(requestBodyDepartmentId)) {
             respond(status: 200, responseMessage: 'Successful deletion')
-        } catch (e) {
+        } else {
             respond(status: 400, responseMessage: 'Failed deletion')
         }
 
