@@ -10,7 +10,7 @@ class DepartmentResponderController {
         try {
             respond(status: 200, responseMessage: deptService.getAllDepartments())
         } catch (e) {
-            respond(status: 400, responseMessage: null)
+            respond(status: 404, responseMessage: null)
         }
     }
 
@@ -28,7 +28,7 @@ class DepartmentResponderController {
         try {
             respond(status: 200, responseMessage: deptService.getDeptById(requestBodyDepartmentId))
         } catch (e) {
-            respond(status: 400, responseMessage: null)
+            respond(status: 404, responseMessage: null)
         }
     }
 

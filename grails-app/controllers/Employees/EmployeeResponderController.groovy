@@ -15,7 +15,7 @@ class EmployeeResponderController {
             def message = [allEmployeesofDepartment: allEmployeesofDepartment, departmentInformation: departmentInformation]
             respond(status: 200, responseMessage: message)
         } catch (e) {
-            respond(status: 400, responseMessage: null)
+            respond(status: 404, responseMessage: null)
         }
 
     }
@@ -28,7 +28,7 @@ class EmployeeResponderController {
             def FormInformation = [employeeInformation: employeeInformation, allDepartments: allDepartments]
             respond(status: 200, responseMessage: FormInformation)
         } catch (e) {
-            respond(status: 400, responseMessage: null)
+            respond(status: 404, responseMessage: null)
         }
     }
 

@@ -26,6 +26,10 @@ class AuthenticationResponderInterceptor {
             DecodedJWT jwt = verifier.verify(token.value);
             return true
         } catch (JWTVerificationException exception) {
+            response.status= 401
+            return false
+        } catch (e) {
+            response.status= 401
             return false
         }
 
